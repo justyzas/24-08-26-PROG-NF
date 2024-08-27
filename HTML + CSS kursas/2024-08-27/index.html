@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+		<!-- Document styles -->
+		<style>
+			.geltonas-fonas {
+				background-color: yellow;
+			}
+		</style>
+		<!-- External styles -->
+		<link
+			rel="stylesheet"
+			href="stiliai.css"
+		/>
+	</head>
+	<body>
+		<!-- Semantika - simbolika (skirta robotams googlėje)  Semantikos panaudojimas - SEO (Search engine optimization) -->
+		<!-- H1-H6   - Antraštės-->
+		<h1 title="Čia mano komentaras apie šitą eilutę">Pavadinimui antraštė</h1>
+		<!-- p      - Paragrafas 
+         (turi atitraukimą iš viršaus ir apačios, bei prasideda iš naujos eilutės) -->
+		<p>
+			<!-- Čia visi inline elementai -->
+			<!-- Span jokio stiliaus nesuteikia tačiau duoda inline elementą -->
+			<span>Lorem</span>
+			<s>ipsum</s>
+			<b class="geltonas-fonas">dolor</b>
+			<u>sit</u>
+			<i>amet</i>
+			<a href="/">consectetur</a>.
+		</p>
+		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi, est.</p>
+
+		<!-- div - Blockinis elementas (užima visą ekrano plotį) tačiau neturi jokio stiliaus -->
+		<div title="Čia mano komentaras apie šitą eilutę">
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, nesciunt!
+		</div>
+		<div>
+			<!-- Sup - Mažas tekstas viršuje -->
+			<!-- Sub - Mažas tekstas apačioje -->
+			Lorem<sup>2</sup> ipsum<sub>3</sub> dolor sit amet consectetur,
+			adipisicing elit. Dicta, nesciunt!
+		</div>
+		<!-- IMG sukuria nuotrauką -->
+		<!-- src - nuoroda į nuotrauką -->
+		<!-- alt - alternatyvusis tekstas -->
+		<!-- width, height - atributai keičiantys nuotraukos plotį/aukštį -->
+		<img
+			src="/images/FYF-118.webp"
+			alt="čia turėtų būti gėlės"
+			width="200"
+		/>
+		<a href="/about">apie mane</a>
+
+		<!-- Sąrašai ol ul -->
+		<!-- ol - numeruotas sąrašas -->
+		<!-- li - list item -->
+
+		<ol class="geltonas-fonas">
+			<li>Pienas</li>
+			<li>Varškė</li>
+			<li>Ledai</li>
+		</ol>
+		<!-- type - numato sąrašo tipą -->
+		<ol type="A">
+			<li>Pienas</li>
+			<li>Varškė</li>
+			<li>Ledai</li>
+		</ol>
+		<!-- start numato nuo kurio skaičiaus prasideda sąrašas -->
+		<ol start="10">
+			<li>Pienas</li>
+			<li>Varškė</li>
+			<li>Ledai</li>
+		</ol>
+		<!-- reversed numato kad sąrašas eis atvirkščiai -->
+		<ol
+			start="10"
+			reversed
+		>
+			<li>Pienas</li>
+			<li>Varškė</li>
+			<li>Ledai</li>
+		</ol>
+		<!-- ul - nesunumeruotas sąrašas -->
+		<ul>
+			<li>Pienas</li>
+			<li>Varškė</li>
+			<li>Ledai</li>
+		</ul>
+
+		<!-- Lentelė -->
+		<h2>Semantiškai netvarkinga lentelė</h2>
+
+		<!-- table - lentelės apibrėžimas -->
+		<table>
+			<!-- tr - lentelės eilutė -->
+			<tr>
+				<!-- lentelės antraštė -->
+				<th>duomuo1</th>
+				<th>duomuo2</th>
+				<th>duomuo3</th>
+			</tr>
+			<tr>
+				<!-- td - lentelės duomenys -->
+				<td>duomuo1</td>
+				<td>duomuo2</td>
+				<td>duomuo3</td>
+			</tr>
+			<tr>
+				<td colspan="2">duomuo1__duomuo2</td>
+				<td>duomuo2</td>
+			</tr>
+			<tr>
+				<td colspan="3">Lorem ipsum dolor sit amet.</td>
+			</tr>
+			<tr>
+				<td rowspan="2">duomuo 1</td>
+				<td>duomuo 2</td>
+				<td>duomuo 3</td>
+			</tr>
+			<tr>
+				<td>duomuo1</td>
+			</tr>
+		</table>
+
+		<!-- Inline stiliai -->
+		<h2 style="color: blue; height: 100px">Semantiškai tvarkinga lentelė</h2>
+
+		<!-- class apibrežia klasę, kuri gali būti priskirta ne vienam elementui ir pagal ją vėliau yra stilizuojama -->
+		<!-- id apibrežia identifikatorių, kuris gali būti priskirtas tik vienam elementui ir pagal jį vėliau yra stilizuojama -->
+		<table
+			class="geltonas-fonas"
+			id="semantiska"
+		>
+			<thead>
+				<tr>
+					<th>Stulpelis 1</th>
+					<th>Stulpelis 2</th>
+					<th>Stulpelis 3</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>data1</td>
+					<td>data2</td>
+					<td>data3</td>
+				</tr>
+				<tr>
+					<td>data1</td>
+					<td>data2</td>
+					<td>data3</td>
+				</tr>
+				<tr>
+					<td>data1</td>
+					<td>data2</td>
+					<td>data3</td>
+				</tr>
+				<tr>
+					<td>data1</td>
+					<td>data2</td>
+					<td>data3</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
