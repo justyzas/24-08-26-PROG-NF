@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav{
+    background-color: #222222;
+}
+
+.container{
+    margin: 0 auto; /*  Turinys išsicentruoja horizontaliai */
+    max-width: 1200px; /*Turinio maksimalus plotis*/
+}
+
+nav .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+nav a{
+    color: white;
+}

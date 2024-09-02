@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sevillana&display=swap");
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.bg-red {
+	background-color: red;
+}
+
+.bg-green {
+	background-color: greenyellow;
+}
+/* Sekančios dvi klasės išpozicionuoja elementą per vidurį */
+.center-element {
+	display: block;
+	margin: 0 auto;
+}
+/* img {
+	width: 200px;
+} */
+
+.min-width-400 {
+	min-width: 400px;
+}
+
+.max-width-700 {
+	max-width: 700px;
+}
+
+.min-height-400 {
+	min-height: 400px;
+}
+
+.max-height-700 {
+	max-height: 700px;
+}
+
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: beige;
+	border: 1px solid black;
+}
+.positioning-flex {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 10px;
+	row-gap: 25px;
+	justify-content: space-around;
+	/* width: 800px;
+	margin-left: 200px;
+	 */
+	position: relative;
+}
+
+.last {
+	position: relative;
+	bottom: -20px;
+	right: 100px;
+	background-color: rgb(203, 203, 173);
+}
+
+section {
+	height: 300px;
+	background-color: chartreuse;
+	margin-top: 80px;
+	position: relative;
+}
+
+.absolute {
+	background-color: rgb(228, 228, 102);
+	position: absolute;
+}
+header {
+	margin-top: 80px;
+	padding: 40px;
+	background-color: blue;
+	/* position: relative; */
+}
+.bl {
+	/* Apacia kaire puse */
+	bottom: 5px;
+	left: 5px;
+}
+.tr {
+	top: 5px;
+	right: 5px;
+}
+.center {
+	left: 50%;
+	/* transform - skirta elemento manipuliavimui */
+	/* translate - funkcija, pozicionuojanti elementą nuo jo įprastos pozicijos */
+	transform: translate(-50%, -50%);
+	top: 50%;
+	/* transform: translateY(-50%); */
+}
+* {
+	font-family: "Sevillana", "Roboto", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
