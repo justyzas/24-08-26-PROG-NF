@@ -15,9 +15,12 @@ header {
 			color: var(--tamsi-spalva);
 			line-height: 24px;
 			margin-right: 30px;
+			/* Nustato lėtą perėjimą spalvai per 300ms, lėtai įsijungiantį ir lėtai išsijungiantį */
 			transition: color 300ms ease-in-out;
 		}
+		/* Hover savybė nurodo, kad tik užvedus pelytę ant bazinio (a) elemento jam prisitaiko/persirašo savybės */
 		a:hover {
+			/* Perrašoma savybė color nustato naują spalvą */
 			color: var(--akcentuojama-spalva);
 		}
 	}
