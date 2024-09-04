@@ -1,0 +1,77 @@
+/* Headeriu stiliai */
+header {
+	/* --------------------------------------------- */
+	.nav-container {
+		box-shadow: 1px 1px 10px rgb(224, 224, 224);
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 0;
+
+		a {
+			display: inline-block;
+			color: var(--tamsi-spalva);
+			line-height: 24px;
+			margin-right: 30px;
+			/* Nustato lėtą perėjimą spalvai per 300ms, lėtai įsijungiantį ir lėtai išsijungiantį */
+			transition: color 300ms ease-in-out;
+		}
+		/* Hover savybė nurodo, kad tik užvedus pelytę ant bazinio (a) elemento jam prisitaiko/persirašo savybės */
+		a:hover {
+			/* Perrašoma savybė color nustato naują spalvą */
+			color: var(--akcentuojama-spalva);
+		}
+	}
+	section.hero .container {
+		padding-top: 100px;
+		display: flex;
+		img {
+			width: 50%;
+		}
+		.discount-box {
+			display: inline-block;
+			background-color: #f8f9fa;
+			border: 1px solid #e6e6e6;
+			padding: 0 10px;
+			margin-bottom: 20px;
+			border-radius: 3px;
+		}
+		h1 {
+			margin-top: 0;
+			margin-bottom: 30px;
+			font-size: 60px;
+			padding-right: 40px;
+			line-height: 80px;
+			letter-spacing: 3px;
+		}
+		p.description {
+			font-size: 18px;
+			line-height: 30px;
+			color: #6c757d;
+		}
+		.btn-icon {
+			font-size: 8px;
+			display: inline-block;
+			margin-left: 10px;
+		}
+		.green-rounded-btn {
+			background: rgb(25, 155, 167);
+			background: linear-gradient(
+				90deg,
+				rgba(25, 155, 167, 1) 0%,
+				rgba(177, 240, 131, 1) 100%
+			);
+			color: white;
+			border: 0;
+			border-radius: 50px;
+			padding: 8px 30px;
+		}
+		.transparent-demo-btn {
+			border: 0;
+			background-color: white;
+		}
+	}
+}

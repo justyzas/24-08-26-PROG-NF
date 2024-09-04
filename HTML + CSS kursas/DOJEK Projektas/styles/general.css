@@ -25,6 +25,7 @@ body {
 
 * {
 	font-family: "Mandali", sans-serif;
+	box-sizing: border-box;
 }
 /* Pirmenybė skiriama dešiniausiam selektoriui */
 /* *, tag, .class, tag.class, tag.class.class2, #id */
@@ -45,4 +46,10 @@ h6 {
 
 a {
 	text-decoration: none;
+}
+.text-accent {
+	color: var(--akcentuojama-spalva);
+}
+.text-dark {
+	color: var(--tamsi-spalva);
 }
