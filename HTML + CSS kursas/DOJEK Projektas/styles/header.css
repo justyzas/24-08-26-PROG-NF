@@ -1,5 +1,9 @@
 /* Headeriu stiliai */
 header {
+	background-image: url(/assets/images/hero-bg.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 	/* --------------------------------------------- */
 	.nav-container {
 		box-shadow: 1px 1px 10px rgb(224, 224, 224);
@@ -72,6 +76,18 @@ header {
 		.transparent-demo-btn {
 			border: 0;
 			background-color: white;
+		}
+	}
+	.header-footer {
+		margin-top: 80px;
+		/* gap: 100px; */
+		display: flex;
+		justify-content: space-between;
+		padding: 0 40px;
+		margin-bottom: 200px;
+		img {
+			width: 15%;
+			/* flex-shrink: 1; */
 		}
 	}
 }

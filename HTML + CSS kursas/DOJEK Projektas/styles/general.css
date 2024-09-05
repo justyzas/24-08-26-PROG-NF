@@ -4,17 +4,17 @@
 }
 
 @font-face {
-	font-family: "mano sriftas medium";
+	font-family: "cerebri medium";
 	src: url("../assets/fonts/Cerebri.Sans.Pro/CerebriSansPro-Medium.ttf")
 		format("truetype");
 }
 @font-face {
-	font-family: "mano sriftas bold";
+	font-family: "cerebri bold";
 	src: url("../assets/fonts/Cerebri.Sans.Pro/CerebriSansPro-Bold.ttf")
 		format("truetype");
 }
 @font-face {
-	font-family: "mano sriftas semibold";
+	font-family: "cerebri semibold";
 	src: url("../assets/fonts/Cerebri.Sans.Pro/CerebriSansPro-SemiBold.ttf")
 		format("truetype");
 }
@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "mano sriftas medium";
+	font-family: "cerebri medium";
 	color: var(--tamsi-spalva);
 }
 
@@ -52,4 +52,7 @@ a {
 }
 .text-dark {
 	color: var(--tamsi-spalva);
+}
+button {
+	cursor: pointer;
 }
