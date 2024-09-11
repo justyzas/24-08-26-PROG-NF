@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Grid</title>
+
+		<style>
+			.box {
+				background: orange;
+				min-height: 100px;
+				border: 1px solid black;
+				height: 100%;
+				width: 100%;
+			}
+
+			.grid {
+				display: grid;
+				margin-bottom: 100px;
+				padding: 20px;
+				gap: 20px;
+				background-color: yellow;
+			}
+
+			.grid-3-columns {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			.grid-second {
+			}
+
+			.grid-third {
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid-3-columns grid">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+		<div class="grid-second grid">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+		<div class="grid-third grid">
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+	</body>
+</html>
