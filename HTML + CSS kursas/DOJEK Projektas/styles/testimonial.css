@@ -1,2 +1,49 @@
 section#testimonial {
+	background-color: #fff0c4;
+	letter-spacing: 1px;
+
+	h2,
+	h4 {
+		text-align: center;
+	}
+	h2 {
+		margin-bottom: 0.5rem;
+	}
+
+	.description {
+		width: 70%;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.cards {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: space-between;
+
+		.card {
+			padding: 2rem;
+			width: 29%;
+			background-color: white;
+			position: relative;
+
+			.quote {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 60px;
+			}
+			img.card-img {
+				border-radius: 9999px;
+				width: 80px;
+			}
+
+			h2,
+			h4 {
+				text-align: left;
+			}
+		}
+	}
+	.title {
+		text-transform: uppercase;
+	}
 }

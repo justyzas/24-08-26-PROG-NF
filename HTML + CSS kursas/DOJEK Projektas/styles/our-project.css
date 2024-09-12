@@ -1,5 +1,4 @@
 section#our-project {
-	padding: 100px 0;
 	h2,
 	h4 {
 		text-align: center;
@@ -17,19 +16,38 @@ section#our-project {
 		gap: 3%;
 
 		.card {
+			margin: 0 auto;
 			border-radius: 6px;
 			overflow: hidden;
 			box-shadow: 2px 2px 20px rgb(135, 135, 135);
+			max-width: 400px;
+			min-height: 400px;
+
+			/* height: 450px; */
 			img {
+				/* border-top-left-radius: 6px;
+				border-top-right-radius: 6px; */
 				width: 100%;
 			}
 			.card-body {
 				padding: 20px;
+				max-height: 120px;
+				overflow: auto;
 				h3,
 				p {
 					margin: 0.5rem 0;
 				}
 			}
+		}
+	}
+	@media (max-width: 1150px) {
+		.cards {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	@media (max-width: 796px) {
+		.cards {
+			grid-template-columns: 1fr;
 		}
 	}
 }

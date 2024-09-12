@@ -57,3 +57,12 @@ a {
 button {
 	cursor: pointer;
 }
+
+main {
+	section {
+		padding: 100px 0;
+	}
+}
+html {
+	scroll-behavior: smooth;
+}

@@ -1,6 +1,5 @@
 section#what-we-do {
 	background-color: #f8f9fa;
-	padding: 100px 0;
 
 	h4 {
 		color: var(--tamsi-spalva);
@@ -17,6 +16,7 @@ section#what-we-do {
 	.cards {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 
 		.card {
 			width: 30%;
@@ -35,6 +35,15 @@ section#what-we-do {
 					font-size: 12px;
 				}
 			}
+		}
+	}
+	@media (max-width: 796px) {
+		.cards {
+			flex-direction: column;
+			gap: 20px;
+		}
+		.card {
+			min-width: 60%;
 		}
 	}
 }
