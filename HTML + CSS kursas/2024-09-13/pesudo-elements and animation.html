@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+		<style>
+			@keyframes transition-to-green {
+				from {
+					background-color: red;
+					height: 150px;
+					width: 150px;
+					text-align: center;
+					color: black;
+				}
+				to {
+					background-color: rgb(0, 255, 166);
+					height: 80px;
+					width: 100%;
+					text-align: center;
+					color: white;
+				}
+			}
+
+			.animated {
+				animation: transition-to-green 3s ease-in-out forwards;
+			}
+			.box {
+				background-color: red;
+				height: 150px;
+				width: 150px;
+				margin-bottom: 60px;
+				position: relative;
+			}
+			.box::before {
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background-color: aquamarine;
+				cursor: pointer;
+				right: 10px;
+				bottom: 10px;
+			}
+			/* .box:hover::after{
+
+            } */
+			.box::after {
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background-color: rgb(86, 40, 193);
+				cursor: pointer;
+				left: 10px;
+				bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box animated">tekstas</div>
+		<div class="box"></div>
+	</body>
+</html>

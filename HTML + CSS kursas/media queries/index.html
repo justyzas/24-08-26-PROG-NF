@@ -8,6 +8,22 @@
 		/>
 		<title>Document</title>
 		<style>
+			@keyframes expandNav {
+				from {
+					height: 50px;
+				}
+				to {
+					height: 230px;
+				}
+			}
+			@keyframes suspendNav {
+				to {
+					height: 50px;
+				}
+				from {
+					height: 230px;
+				}
+			}
 			body {
 				margin: 0;
 			}
@@ -51,13 +67,19 @@
 
 				nav {
 					flex-direction: column;
-					max-height: 300px;
-					height: 230px;
+					/* max-height: 300px;
+					height: 230px; */
 				}
 
 				nav.closed {
-					max-height: 50px;
-					height: 50px;
+					/* max-height: 50px;
+					height: 50px; */
+					animation: suspendNav 2s forwards;
+				}
+				nav.open {
+					/* max-height: 50px;
+					height: 50px; */
+					animation: expandNav 2s forwards;
 				}
 
 				a.nav-link {
@@ -84,7 +106,7 @@
 		/>
 	</head>
 	<body>
-		<nav class="closed">
+		<nav class="open">
 			<a
 				href="/home"
 				class="nav-link"
