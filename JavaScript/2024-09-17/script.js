@@ -1,63 +1,47 @@
-// Vienos eilutės komentaras
+// + - * / %
 
-/* 
-Čia yra 
-multi
-line
+let amzius = dabartiniaiMetai - gimimoMetai;
 
-komentaras
+if (amzius < 0) console.warn("Klaida - amzius mazesnis nei 0");
+if (typeof amzius !== "number") console.warn("Klaida - amzius yra ne skaicius");
+if (typeof pinigai !== "number")
+	console.warn("Klaida - pinigai yra ne skaicius");
+//Jei boolean reikšmė skliausteliuose yra true
+// if (amzius >= 18) {
+// 	if (pinigai >= energetinioKaina) {
+// 		console.log("Parduodamas energetinis gėrimas...");
+// 	} else {
+// 		console.log("Neparduodamas energetinis nes neužtenka pinigų");
+// 	}
+// } else {
+// 	console.log("Subaramas vaikas ir siunčiamas į mokyklą");
+// }
 
+// BOOLEAN operatoriai:  == === != !== < > <= >= ()
+// IR  -  &&,    ARBA   -  ||
+//Kombinacija  ALT + 0128 = €
+if (amzius >= 18 && pinigai >= energetinioKaina) {
+	// console.log("Parduodamas energetinis....");
+	document.write(
+		`<b>Parduodamas energetinis ${amzius} amžiaus žmogui
+         už ${energetinioKaina}€ kainą.</b>`
+	);
+	pinigai -= energetinioKaina;
+	document.write(`<p>Dabartiniai pinigai: <b>${pinigai}€</b></p>`);
+} else if (amzius < 18) {
+	document.write("Subaramas vaikas ir siunčiamas į mokyklą");
+} else {
+	document.write("Neparduodamas energetinis nes neužtenka pinigų");
+}
+console.log("Pinigu kiekis: " + pinigai);
+// amzius >= 18 && pinigai < energetinioKaina
+
+/*
+typeof operacija duoda skirtingus rezultatus:
+typeof 4 = 'number'
+typeof '4' = 'string'
+typeof ('4'> 4) = 'boolean'
 */
 
-// console.log("pranešimas");
-// alert("Radiacijos pavojus")
-
-// STRING  -  tekstinė informacija
-// NUMBER  -  skaitinė informacija
-// BOOLEAN -  loginė informacija
-
-// Tekstinės reikšmės kintamasis:
-let tekstas = `gali būti parašyta praktiškai bet kas`;
-console.log(tekstas);
-// Skaitinės reikšmės kintamasis
-let skaicius = 22;
-console.log(skaicius);
-// Loginio tipo informacija (gali turėti tik true ir false)
-let arDaugiau = 10 > 20;
-console.log(arDaugiau);
-
-let vardas = "Saulius Prusaitis";
-let gimimoMetai = 1992;
-
-let amzius = 2024 - gimimoMetai;
-
-let pranesimas =
-	"Mano vardas yra " +
-	vardas +
-	". Aš gimiau " +
-	gimimoMetai +
-	" metais. Man yra " +
-	amzius +
-	" metų.";
-
-console.log(pranesimas);
-
-// -------Antroji dalis
-
-let kainaUzVnt = 4.99;
-let kiekis = 20;
-let pvm = 21;
-
-let kainaBePvm = kainaUzVnt * kiekis;
-// paima pirmuosius kelis skaičius po kablelio
-// kainaBePvm = kainaBePvm.toFixed(2); //tekstas
-
-// toPrecision suapvalina skaičių iki 4 sk. po kablelio
-// kainaBePvm = kainaBePvm.toPrecision(4);
-
-// sumos su pvm   =   kaina be pvm  +  pvm/100*kaina be pvm
-
-let mokesciai = (kainaBePvm * pvm) / 100; //skaicius
-let galutineSuma = kainaBePvm + mokesciai; //tekstas + skaicius
-
-console.log(galutineSuma);
+// konstantos deklaracijos būdas:
+// const variable = 7;
