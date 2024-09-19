@@ -98,16 +98,23 @@ function funkcijaSuParametrais(skaicius) {
 	elementas.innerHTML += " " + rezultatas;
 }
 
+//Funkcija, kuri gauna reikšmę iš įvesties laukelio ir atlieka console.log()
 function gautiIvesti() {
 	// Gaunamas įvesties laukelis
 	const ivestiesLaukelis = document.querySelector("#vardas");
 	//Gaunama įvesties laukelio reikšmė
 	const laukelioReiksme = ivestiesLaukelis.value;
+	// Paspaudus mygtuką išsiūsti, ištriname įvesties laukelyje esantį turinį
 	ivestiesLaukelis.value = "";
 
-	// const naujaLaukelioReiksme = laukelioReiksme.toUpperCase();
+	/*
+    //Teisingiau naudoti const nei let, kadangi įpareigoja naudotis 
+    // teisingomis praktikomis, tačiau galima naudoti ir let
+
+	const naujaLaukelioReiksme = laukelioReiksme.toUpperCase();
+    */
 	console.log(laukelioReiksme);
 }
 
-//
-console.log(laukelioReiksme);
+// Reikšmė funkcijos išorėje yra nepasiekiama!
+console.log(laukelioReiksme); //ERROR
