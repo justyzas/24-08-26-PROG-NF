@@ -17,24 +17,39 @@ const valiutos1KiekisText = prompt(
 
 // 3. Sutvarkome kintamųjų tipus
 const valiutos1KiekisNumber = +valiutos1KiekisText;
-let valiutos2KiekisNumber; //undefined
-console.log(valiutos2KiekisNumber);
-console.log(valiuta1, valiuta2, valiutos1KiekisNumber);
-console.log(typeof valiuta1, typeof valiuta2, typeof valiutos1KiekisNumber);
 
-if (valiuta1 == "EUR" && valiuta2 == "USD") {
-	//EUR -> USD
-	valiutos2KiekisNumber = valiutos1KiekisNumber / USDEUR;
-} else if (valiuta1 == "USD" && valiuta2 == "EUR") {
-	//USD -> EUR
-	valiutos2KiekisNumber = valiutos1KiekisNumber * USDEUR;
+const arPirmojiValiutaTeisinga =
+	valiuta1 === "EUR" || valiuta1 === "USD" || valiuta1 === "GBP";
+const arAntrojiValiutaTeisinga =
+	valiuta2 === "EUR" || valiuta2 === "USD" || valiuta2 === "GBP";
+const arValiutosKiekisYraSkaicius =
+	typeof valiutos1KiekisNumber === "number" && !isNaN(valiutos1KiekisText);
+if (
+	arAntrojiValiutaTeisinga &&
+	arPirmojiValiutaTeisinga &&
+	arValiutosKiekisYraSkaicius
+) {
+	let valiutos2KiekisNumber; //undefined
+	console.log(valiutos2KiekisNumber);
+	console.log(valiuta1, valiuta2, valiutos1KiekisNumber);
+	console.log(typeof valiuta1, typeof valiuta2, typeof valiutos1KiekisNumber);
+
+	if (valiuta1 == "EUR" && valiuta2 == "USD") {
+		//EUR -> USD
+		valiutos2KiekisNumber = valiutos1KiekisNumber / USDEUR;
+	} else if (valiuta1 == "USD" && valiuta2 == "EUR") {
+		//USD -> EUR
+		valiutos2KiekisNumber = valiutos1KiekisNumber * USDEUR;
+	}
+	// else if(){}//EUR -> GBP
+	// else if(){}//GBP -> EUR
+	// else if(){}//USD -> GBP
+	// else if(){}//GBP -> USD
+
+	console.log(`Keičiame ${valiutos1KiekisNumber} ${valiuta1} => ${valiuta2}`);
+	console.log(
+		`${valiutos1KiekisNumber}${valiuta1} = ${valiutos2KiekisNumber}${valiuta2}`
+	);
+} else {
+	alert("Neteisingai įvesti duomenys!");
 }
-// else if(){}//EUR -> GBP
-// else if(){}//GBP -> EUR
-// else if(){}//USD -> GBP
-// else if(){}//GBP -> USD
-
-console.log(`Keičiame ${valiutos1KiekisNumber} ${valiuta1} => ${valiuta2}`);
-console.log(
-	`${valiutos1KiekisNumber}${valiuta1} = ${valiutos2KiekisNumber}${valiuta2}`
-);
