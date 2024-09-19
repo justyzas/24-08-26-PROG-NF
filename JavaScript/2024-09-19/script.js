@@ -116,5 +116,5 @@ function gautiIvesti() {
 	console.log(laukelioReiksme);
 }
 
-// Reikšmė funkcijos išorėje yra nepasiekiama!
+// Reikšmė apibrėžta funkcijos viduje -> funkcijos išorėje yra nepasiekiama!
 console.log(laukelioReiksme); //ERROR
