@@ -1,5 +1,3 @@
-
-
 function isleistiPinigus()
 {
     const islaiduElementas = document.querySelector("#islaidu-input");

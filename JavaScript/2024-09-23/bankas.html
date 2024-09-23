@@ -7,32 +7,58 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Meta Bank!</title>
+        <link rel="stylesheet" href="bankas.css">
 	</head>
 	<body>
-		<h3 id="greeting">Sveiki, {vardas}</h3>
+        <header>
+            <nav class="container">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/021/616/845/small_2x/banking-3d-render-icon-illustration-png.png" alt="bank logo">
+                <p id="balance">Jūsų balansas: x €</p>
+                <h3 id="greeting">Sveiki, {vardas}</h3>
+            </nav>
+            
+        </header>
 
-		<p id="balance">Jūsų balansas: x €</p>
-		<div>
-			<input
-				type="number"
-				placeholder="Įveskite išlaidas"
-				id="islaidu-input"
-			/>
-			<button onclick="isleistiPinigus()">Išleisti pinigus</button>
-		</div>
-		<hr />
-		<div>
-			<input
-				type="number"
-				placeholder="Įveskite kiek pinigų įnešate"
-				id="inaso-input"
-			/>
-			<button>Įnešti pinigus</button>
-		</div>
-		<hr />
-		<div>
-			<button id="alga">Gauti algą</button>
-		</div>
+        <main class="container">
+            <div>
+                <h4>Išlaidų įvedimas</h4>
+                <div class="input-container">
+                    <input
+                    type="number"
+                    placeholder="Įveskite išlaidas"
+                    id="islaidu-input"
+                    />
+                    <span class="suffix">€</span>
+                </div>
+                
+                <div class="button-container">
+                    <button onclick="isleistiPinigus()">Išleisti pinigus</button>
+                </div>
+                
+            </div>
+            <hr />
+            <div>
+                <h4>Pinigų įnešimas</h4>
+                <div class="input-container">
+                    <input
+                    type="number"
+                    placeholder="Įveskite kiek pinigų įnešate"
+                    id="inaso-input"
+                    />
+                    <span class="suffix">€</span>
+                </div>
+                
+                <div class="button-container">
+                    <button>Įnešti pinigus</button>
+                </div>
+            </div>
+            <hr />
+            <div>
+                <h4>Algos gavimas</h4>
+                <button id="alga">Gauti algą</button>
+            </div>
+        </main>
+		
 		<script src="bankoFunkcijos.js"></script>
 		<script src="bankas.js"></script>
 	</body>
