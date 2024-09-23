@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Meta Bank!</title>
+	</head>
+	<body>
+		<h3 id="greeting">Sveiki, {vardas}</h3>
+
+		<p id="balance">Jūsų balansas: x €</p>
+		<div>
+			<input
+				type="number"
+				placeholder="Įveskite išlaidas"
+				id="islaidu-input"
+			/>
+			<button onclick="isleistiPinigus()">Išleisti pinigus</button>
+		</div>
+		<hr />
+		<div>
+			<input
+				type="number"
+				placeholder="Įveskite kiek pinigų įnešate"
+				id="inaso-input"
+			/>
+			<button>Įnešti pinigus</button>
+		</div>
+		<hr />
+		<div>
+			<button id="alga">Gauti algą</button>
+		</div>
+		<script src="bankoFunkcijos.js"></script>
+		<script src="bankas.js"></script>
+	</body>
+</html>
