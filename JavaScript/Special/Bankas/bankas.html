@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Meta Bank!</title>
+        <link rel="stylesheet" href="bankas.css">
+	</head>
+	<body>
+        <header>
+            <nav class="container">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/021/616/845/small_2x/banking-3d-render-icon-illustration-png.png" alt="bank logo">
+                <p id="balance">Jūsų balansas: <span class="money"></span> €</p>
+                <h3 id="greeting">Sveiki, {vardas}</h3>
+            </nav>
+            
+        </header>
+
+        <main class="container">
+            <div>
+                <h4>Išlaidų įvedimas</h4>
+                <div class="input-container">
+                    <input
+                    type="number"
+                    placeholder="Įveskite išlaidas"
+                    id="islaidu-input"
+                    />
+                    <span class="suffix">€</span>
+                </div>
+                
+                <div class="button-container">
+                    <button onclick="isleistiPinigus()">Išleisti pinigus</button>
+                </div>
+                
+            </div>
+            <hr />
+            <div>
+                <h4>Pinigų įnešimas</h4>
+                <div class="input-container">
+                    <input
+                    type="number"
+                    placeholder="Įveskite kiek pinigų įnešate"
+                    id="inaso-input"
+                    />
+                    <span class="suffix">€</span>
+                </div>
+                
+                <div class="button-container">
+                    <button onclick="inestiPinigus()">Įnešti pinigus</button>
+                </div>
+            </div>
+            <hr />
+            <div>
+                <h4>Algos gavimas</h4>
+                <button id="alga" onclick="gautiAlga()">Gauti įprastą algą</button>
+            </div>
+            <hr>
+            <div>
+                <h4>Neįprastos algos gavimas</h4>
+                <input type="number" id="neiprasta-alga" />
+                <button id="neiprasta-alga-mygtukas" onclick="gautiNeiprastaAlga()">Gauti neįprastą algą</button>
+            </div>
+        </main>
+		
+		<script src="bankoFunkcijos.js"></script>
+		<script src="bankas.js"></script>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+*{ margin: 0; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+body{
+    background-color: antiquewhite;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+header{
+    background-color: blanchedalmond;
+    margin-bottom: 60px;
+    
+}
+nav img{
+    height: 100px;
+}
+hr{
+    margin: 20px 0;
+}
+h4{
+    margin-bottom: 15px;
+}
+
+input{
+    padding: 6px 20px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: 1px 1px 8px rgb(91, 94, 105);
+    cursor: pointer;
+    width: 40%;
+}
+input:focus{
+    box-shadow: 1px 1px 8px rgb(3, 26, 159);
+}
+button{
+    border: 0;
+    background-color: rgb(215, 63, 29);
+    color: white;
+    padding: 8px 40px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+button:hover{
+    background-color: rgb(186, 44, 12);
+}
+.button-container{
+    margin: 10px 0;
+}
+.input-container{
+    position: relative;
+}
+.input-container .suffix{
+    position: absolute;
+    left: 38%;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+    color:gray
+}
