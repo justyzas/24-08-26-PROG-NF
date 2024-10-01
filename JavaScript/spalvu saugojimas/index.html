@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+		<style>
+			.kvadratas {
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<input
+			type="number"
+			id="red"
+			min="0"
+			max="255"
+			placeholder="RED"
+		/>
+		<input
+			type="number"
+			id="green"
+			min="0"
+			max="255"
+			placeholder="GREEN"
+		/>
+		<input
+			type="number"
+			id="blue"
+			min="0"
+			max="255"
+			placeholder="BLUE"
+		/>
+		<button onclick="chooseNewColor()">Išsaugoti</button>
+		<div id="kvadrato-konteineris">
+			<div
+				class="kvadratas"
+				style="background-color: rgb(100, 100, 0)"
+			>
+				rgb(100, 100, 0)
+			</div>
+		</div>
+
+		<script src="colors.js"></script>
+	</body>
+</html>
