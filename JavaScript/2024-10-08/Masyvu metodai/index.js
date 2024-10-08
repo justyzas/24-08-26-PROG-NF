@@ -86,6 +86,7 @@ const pridetiPrekeiPapildomusLaukus = (v) => {
 		identifikacinisKodas: `${v.barkodas}-${v.pavadinimas}`,
 	};
 };
+
 //filter - filtruoja masyva pagal reiksme
 const prekesSuPvm = prekes.map(pridetiPrekeiPapildomusLaukus).filter((v) => {
 	return v.bendrasIvertinimas > 6.2; //false arba true
