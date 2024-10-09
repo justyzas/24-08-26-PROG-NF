@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>ProAdmis</title>
+		<style>
+			.input {
+				margin-top: 1rem;
+			}
+			#produktai {
+				margin-top: 2rem;
+				width: 100%;
+				text-align: center;
+			}
+			/* table,
+			th,
+			td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			} */
+			tr:nth-child(even) {
+				background-color: #f2f2f2;
+			}
+			.icon {
+				border-radius: 2px;
+				background-color: rgba(0, 0, 0, 0.03);
+				padding: 2px;
+				cursor: pointer;
+			}
+			.icon i {
+				color: rgb(49, 47, 47);
+			}
+			.icon:hover i {
+				color: rgb(255, 0, 0);
+			}
+			.icon:hover {
+				background-color: rgba(0, 0, 0, 0.06);
+			}
+		</style>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+		/>
+	</head>
+	<body>
+		<h2>Produktu administravimo sistema</h2>
+		<hr />
+
+		<div class="input">
+			<label>
+				<span>Įveskite produkto pavadinimą</span>
+				<input
+					id="produktas"
+					type="text"
+					placeholder="produktas"
+				/>
+			</label>
+		</div>
+		<div class="input">
+			<label>
+				<span>Aprašymas</span>
+				<textarea
+					cols="50"
+					id="aprasymas"
+				></textarea>
+			</label>
+		</div>
+		<div class="input">
+			<label>
+				<span>Įveskite produkto produkto kainą</span>
+				<input
+					id="kaina"
+					type="number"
+					max="10000"
+					min="0.10"
+					placeholder="Kaina"
+				/>
+			</label>
+		</div>
+		<div class="input">
+			<label>
+				<span>Įveskite nuolaidą (neprivaloma)</span>
+				<input
+					id="nuolaida"
+					type="number"
+					max="90"
+					min="1"
+					placeholder="Nuolaida"
+				/>
+			</label>
+		</div>
+		<div class="input">
+			<label>
+				<span>Įveskite likutį sandėlyje</span>
+				<input
+					id="likutis"
+					type="number"
+					max="10000"
+					min="0"
+					placeholder="Likutis"
+				/>
+			</label>
+		</div>
+		<div class="input">
+			<label>
+				<span>Įveskite prekinį ženklą</span>
+				<input
+					id="brand"
+					type="text"
+					placeholder="Brand"
+				/>
+			</label>
+		</div>
+		<div class="input">
+			<label>
+				<span>Pasirinkite kategoriją</span>
+				<select id="category">
+					<option value="home-decoration">Namų dekoracijos</option>
+					<option value="groceries">Kanceliarinės prekės</option>
+					<option value="skincare">Odos priežiūros produktai</option>
+					<option value="fragrances">Kvepalai</option>
+					<option value="laptops">Nešiojami kompiuteriai</option>
+				</select>
+			</label>
+		</div>
+		<button onclick="addProduct()">Pridėti prekę</button>
+
+		<table id="produktai">
+			<thead>
+				<tr style="background-color: aliceblue">
+					<th>Veiksmai</th>
+					<th>Produktas</th>
+					<th>Aprašymas</th>
+					<th>Likutis</th>
+					<th>Kaina</th>
+					<th>Prekinis ženklas</th>
+					<th>Kategorija</th>
+				</tr>
+			</thead>
+			<tbody id="products-list">
+				<tr>
+					<td>OPPOF19</td>
+					<td>OPPO F19 is...</td>
+					<td>123</td>
+					<td>280€</td>
+					<td>OPPO</td>
+					<td>Nešiojami kompiuteriai</td>
+				</tr>
+				<tr>
+					<td>OPPOF19</td>
+					<td>OPPO F19 is...</td>
+					<td>123</td>
+					<td>280€</td>
+					<td>OPPO</td>
+					<td>Nešiojami kompiuteriai</td>
+				</tr>
+			</tbody>
+		</table>
+		<script src="deleteProduct.js"></script>
+		<script src="components.js"></script>
+		<script src="createProducts.js"></script>
+		<script src="htmlGeneration.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
