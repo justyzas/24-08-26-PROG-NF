@@ -3,7 +3,7 @@ function createHtmlProductsTable(products = produktai) {
 	for (const indeksas in products) {
 		const product = products[indeksas];
 		htmlCode += `<tr>
-        <td>${deleteIcon(indeksas)}</td>
+        <td>${deleteIcon(indeksas)}${updateIcon(indeksas)}</td>
         <td>${product.title}</td>
         <td>${product.description.slice(0, 15)}...</td>
         <td>${product.stock}</td>
