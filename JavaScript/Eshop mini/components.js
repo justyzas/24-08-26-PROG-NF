@@ -16,3 +16,19 @@ function updateIcon(index) {
 			<i class="bi bi-pencil-fill"></i>
 		</span>`;
 }
+function nav() {
+	return `<nav>
+				<h2>PARDUOTUVĖ</h2>
+				<div>
+					<a href="/shop">Shop</a>
+					<a href="/">Admin</a>
+				</div>
+			</nav>
+			<hr />`;
+}
+function fillNavs() {
+	const navigations = document.querySelectorAll("Navigation"); // grazina elementų masyvą
+	for (const navigation of navigations) navigation.innerHTML = nav();
+}
+
+fillNavs();

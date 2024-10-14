@@ -20,3 +20,19 @@ function updateHtmlTable(products = produktai) {
 	const tbodyElement = document.getElementById("products-list");
 	tbodyElement.innerHTML = htmlCode;
 }
+
+function generateProducts() {
+	//sukamas ciklas
+	//Visi produktai atvaizduojami .products klasę turinčiame dive
+}
+
+function generateProduct(product) {
+	//generuoja produkta su nuolaida arba be
+	let html = "";
+	if (product.discount > 0) html = generateProductWithDiscount(product);
+	else html = generateProductWithoutDiscount(product);
+	return html;
+}
+
+function generateProductWithDiscount(product) {}
+function generateProductWithoutDiscount(product) {}
