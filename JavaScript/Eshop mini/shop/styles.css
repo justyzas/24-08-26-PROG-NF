@@ -4,7 +4,7 @@
 
 .product > .product-details {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	gap: 1rem;
 }
 
@@ -31,6 +31,9 @@
 }
 .product-details > .details > h4 {
 	color: rgb(71, 71, 218);
+}
+.product-details > .details {
+	width: 100%;
 }
 .price-and-actions > button {
 	background-color: rgb(243, 216, 10);
