@@ -22,6 +22,7 @@ function ratingHoverHandler(event) {
 		starElements.push(star);
 	});
 }
+
 function ratingHoverLeaveHandler() {
 	starElements.forEach((star, index) => {
 		star.removeEventListener("mouseenter", starEnterHandler);
