@@ -60,3 +60,8 @@
 	color: white;
 	user-select: none;
 }
+
+.rating .bi {
+	color: rgb(255, 204, 0);
+	cursor: pointer;
+}

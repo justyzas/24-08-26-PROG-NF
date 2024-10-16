@@ -31,4 +31,14 @@ function fillNavs() {
 	for (const navigation of navigations) navigation.innerHTML = nav();
 }
 
+function halfStar() {
+	return `<i class="bi bi-star-half"></i>`;
+}
+function emptyStar() {
+	return `<i class="bi bi-star"></i>`;
+}
+function fullStar() {
+	return `<i class="bi bi-star-fill"></i>`;
+}
+
 fillNavs();
