@@ -1,3 +1,4 @@
+//1MLRD operacijų laiko trukmės apskaičiavimas
 // let sum = 0;
 // // 1 + 3 * 10000 = 30001 operacijų
 
