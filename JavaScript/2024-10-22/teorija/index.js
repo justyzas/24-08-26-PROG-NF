@@ -62,4 +62,5 @@ async function kreipimasisIKelisApi() {
 	const resp1 = await promise1.json();
 	const promise2 = await fetch("https://in3.dev/knygos/types");
 	const resp2 = await promise2.json();
+	return { books: resp1, types: resp2 };
 }
