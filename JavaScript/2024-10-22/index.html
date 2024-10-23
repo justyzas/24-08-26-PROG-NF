@@ -7,8 +7,122 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Knygu katalogas</title>
+		<style>
+			.container {
+				max-width: 1100px;
+				margin: 0 auto;
+			}
+			.book {
+				display: flex;
+				justify-content: space-between;
+				box-shadow: 2px 2px 10px rgb(189, 189, 189);
+				min-height: 150px;
+				width: 100%;
+				padding: 1.5rem;
+				border-radius: 7px;
+				gap: 2rem;
+				margin: 2rem 0;
+				user-select: none;
+			}
+			.book > img {
+				height: 100%;
+			}
+			.details {
+				flex-grow: 1;
+			}
+			.price {
+				flex-basis: 100px;
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				justify-content: center;
+				align-items: center;
+			}
+			.price h4 {
+				margin: 0;
+			}
+			.details b {
+				display: inline-block;
+				width: 30%;
+			}
+		</style>
 	</head>
 	<body>
+		<main class="container">
+			<div>
+				<input type="text" />
+				<select
+					name=""
+					id=""
+				></select>
+			</div>
+			<div class="books">
+				<div class="book">
+					<img
+						src="https://in3.dev/knygos/imgs/1600439228_treniruokite_smegenis_2d1+.jpg"
+						alt=""
+					/>
+					<div class="details">
+						<h3>Šimtas metų žiemos</h3>
+						<p><b>Kategorija:</b><span>Šeimai ir vaikams</span></p>
+						<p><b>Data:</b><span>2022-12-08</span></p>
+						<p><b>Autorius:</b><span>J.K. Rowling</span></p>
+					</div>
+					<div class="price">
+						<h4>201.87€</h4>
+						<button>Prideti i krepseli</button>
+					</div>
+				</div>
+				<div class="book">
+					<img
+						src="https://in3.dev/knygos/imgs/1600439228_treniruokite_smegenis_2d1+.jpg"
+						alt=""
+					/>
+					<div class="details">
+						<h3>Šimtas metų žiemos</h3>
+						<p><b>Kategorija:</b><span>Šeimai ir vaikams</span></p>
+						<p><b>Data:</b><span>2022-12-08</span></p>
+						<p><b>Autorius:</b><span>J.K. Rowling</span></p>
+					</div>
+					<div class="price">
+						<h4>201.87€</h4>
+						<button>Prideti i krepseli</button>
+					</div>
+				</div>
+				<div class="book">
+					<img
+						src="https://in3.dev/knygos/imgs/1600439228_treniruokite_smegenis_2d1+.jpg"
+						alt=""
+					/>
+					<div class="details">
+						<h3>Šimtas metų žiemos</h3>
+						<p><b>Kategorija:</b><span>Šeimai ir vaikams</span></p>
+						<p><b>Data:</b><span>2022-12-08</span></p>
+						<p><b>Autorius:</b><span>J.K. Rowling</span></p>
+					</div>
+					<div class="price">
+						<h4>201.87€</h4>
+						<button>Prideti i krepseli</button>
+					</div>
+				</div>
+				<div class="book">
+					<img
+						src="https://in3.dev/knygos/imgs/1600439228_treniruokite_smegenis_2d1+.jpg"
+						alt=""
+					/>
+					<div class="details">
+						<h3>Šimtas metų žiemos</h3>
+						<p><b>Kategorija:</b><span>Šeimai ir vaikams</span></p>
+						<p><b>Data:</b><span>2022-12-08</span></p>
+						<p><b>Autorius:</b><span>J.K. Rowling</span></p>
+					</div>
+					<div class="price">
+						<h4>201.87€</h4>
+						<button>Prideti i krepseli</button>
+					</div>
+				</div>
+			</div>
+		</main>
 		<script src="api.js"></script>
 		<script src="index.js"></script>
 	</body>
