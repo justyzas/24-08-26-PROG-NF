@@ -5,12 +5,17 @@ async function main() {
 	// Alternatyva:
 	const { books: booksWithoutTypes, types } = booksAndTypes;
 	// Knygų su tipais atradimas
-	const booksWithTypes = booksWithoutTypes.map((book) => {
-		// Naudojamas spread operatorius objektui, siekiant naudoti visas reikšmes, kurias turi knyga
-		// type atrandamas naudojant masyvo metodą find. lyginamas knygos tipas (id skaiciaus) su tipo id.
-		return { ...book, type: types.find((type) => type.id == book.type) };
-	});
-	console.log(booksWithTypes);
+	console.log(booksWithoutTypes);
+	console.log(types);
+	// const programosNusprestasPavadinimas = "asdfghjkl asd asd:@#:$@#:$@#%^^";
+	const booksWithTypes = booksWithoutTypes.map((knyga) => ({
+		...knyga,
+		type: types.find((type) => type.id === knyga.type),
+	}));
+	// 'Lorem ipsum'
+	const booksElement = document.querySelector(".books");
+	booksElement.innerHTML = generateAllBooks(booksWithTypes);
+
 	// Gaunamo obj. pavyzdys:
 	// {
 	// 	author: "Benas Lyris";

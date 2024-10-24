@@ -10,6 +10,13 @@
 //      title: "seimai ir vaikams"
 //  };
 // }
+function generateAllBooks(books) {
+	let html = "";
+	for (const book of books) {
+		html += generateBook(book);
+	}
+	return html;
+}
 function generateBook(book) {
 	return `<div class="book">
 					<img
@@ -18,11 +25,11 @@ function generateBook(book) {
 					<div class="details">
 						<h3>${book.title}</h3>
 						<p><b>Kategorija:</b><span>${book.type.title}</span></p>
-						<p><b>Data:</b><span>2022-12-08</span></p>
-						<p><b>Autorius:</b><span>J.K. Rowling</span></p>
+						<p><b>Data:</b><span>${generateDate(book.time)}</span></p>
+						<p><b>Autorius:</b><span>${book.author}</span></p>
 					</div>
 					<div class="price">
-						<h4>201.87€</h4>
+						<h4>${book.price.toFixed(2)}€</h4>
 						<button>Prideti i krepseli</button>
 					</div>
 				</div>`;
