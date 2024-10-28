@@ -7,7 +7,6 @@ async function main() {
 	// Knygų su tipais atradimas
 	console.log(booksWithoutTypes);
 	console.log(types);
-	// const programosNusprestasPavadinimas = "asdfghjkl asd asd:@#:$@#:$@#%^^";
 	const booksWithTypes = booksWithoutTypes.map((knyga) => ({
 		...knyga,
 		type: types.find((type) => type.id === knyga.type),
