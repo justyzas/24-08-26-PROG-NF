@@ -4,7 +4,7 @@
 const augalai = [
 	"Pomidoras",
 	"Agurkas",
-	"Paprika",
+	"PaprIka",
 	"Moliūgas",
 	"Avokadas",
 	"Morka",
@@ -24,10 +24,13 @@ const augalai = [
 const atrastasMol = augalai.find(
 	(augalas) => augalas.slice(0, 3).toLowerCase() === "mol"
 );
-console.log(atrastasMol);
+console.log(atrastasMol); //Moliūgas
+
 // Ieškome žodžio kuris pasibaigia su 'ika';
-const ieskomasAugalas = augalai.find((augalas) => augalas.slice(-3) === "ika");
-console.log(ieskomasAugalas);
+const ieskomasAugalas = augalai.find(
+	(augalas) => augalas.slice(-3).toLowerCase() === "ika"
+);
+console.log(ieskomasAugalas); //Paprika
 const knyguTipai = [
 	{
 		id: 1,
@@ -68,14 +71,13 @@ const knyguTipai = [
 
 const atrastasKnygosTipas = knyguTipai.findIndex(
 	(knygosTipas) => knygosTipas.id === 7
-);
-
+); //6
 knyguTipai[atrastasKnygosTipas].title = "AAAA";
 console.log(knyguTipai);
 
 // .filter()
 // Atrasti kelis įrašus masyve, atitinkančius nurodytą kriterijų
-const knygosStartuojančiosSuL = knyguTipai.filter(
+const knygosStartuojančiosNeSuLArbaG = knyguTipai.filter(
 	(knygosTipas) =>
 		!(
 			knygosTipas.title[0].toLowerCase() === "l" ||
@@ -83,4 +85,8 @@ const knygosStartuojančiosSuL = knyguTipai.filter(
 		)
 );
 
-console.log(knygosStartuojančiosSuL);
+const knygosSuLyginiaisId = knyguTipai.filter(
+	(knygosTipas) => knygosTipas.id % 2 !== 0
+);
+console.log(knygosStartuojančiosNeSuLArbaG);
+console.log(knygosSuLyginiaisId);
