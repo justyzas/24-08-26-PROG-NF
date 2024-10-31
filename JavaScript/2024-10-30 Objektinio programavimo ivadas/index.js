@@ -18,11 +18,11 @@ const arturoVaikai = objektas3.children;
 console.log(arturoVaikai); //["Ugne", "Saulius"]
 
 arturoVaikai.push("Tadas");
-console.log(objektas3);
+console.log(objektas3); //["Ugne", "Saulius", "Tadas"],
 
 const arturoZmona = { ...objektas3.zmona }; //Sukuriama objekto kopija
-console.log(arturoZmona);
-arturoZmona.name = "Patricija";
+console.log(arturoZmona); //{ name: "Asta", age: 27 }
+arturoZmona.name = "Patricija"; //{ name: "Patricija", age: 27 }
 console.log(arturoZmona);
 
 // Objektai gali laikyti savyje ir funkcijas. Objekte jos vadinamos metodais
