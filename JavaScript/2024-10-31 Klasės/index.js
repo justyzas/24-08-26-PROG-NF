@@ -4,7 +4,7 @@ import Rectangle from "./classes/Rectangle.js";
 
 // Klasės deklaravimas
 
-// const skywalkerProfile = new Profile("Skywalkeris19", "veryHardPassword123");
+const skywalkerProfile = new Profile("Skywalkeris19", "veryHardPassword123");
 // const agneProfile = new Profile("AGNE123", "Agnieskha12479");
 
 // agneProfile.logout();

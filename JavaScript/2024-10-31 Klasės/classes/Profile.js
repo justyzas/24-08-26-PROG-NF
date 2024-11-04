@@ -24,13 +24,13 @@ export default class Profile {
 		return this.#username;
 	}
 
+	get slug() {
+		return this.#slug;
+	}
+
 	set username(newUsername) {
 		this.#username = newUsername;
 		this.#slug = newUsername.toLowerCase();
-	}
-
-	get slug() {
-		return this.#slug;
 	}
 
 	// Objekto Profile metodas

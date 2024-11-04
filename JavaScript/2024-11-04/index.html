@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+		<style>
+			form > div {
+				margin-bottom: 1rem;
+			}
+			form > div > input {
+				padding: 0.5rem 0.25rem;
+				outline: none;
+				border-radius: 3px;
+				min-width: 200px;
+				border: 1px solid black;
+			}
+			form > div > input:focus {
+				outline: 1px solid lightseagreen;
+			}
+			form > div > label {
+				display: inline-block;
+				width: 150px;
+			}
+			button {
+				padding: 0.5rem 4rem;
+				background-color: lightseagreen;
+				color: white;
+				border: none;
+				border-radius: 6px;
+				cursor: pointer;
+			}
+			button:hover {
+				background-color: rgb(26, 139, 134);
+			}
+			td,
+			th {
+				border-top: 1px solid black;
+				border-bottom: 1px solid black;
+				padding: 0.5rem 0;
+				text-align: left;
+			}
+			table {
+				margin-top: 1rem;
+				border: 1px solid black;
+				border-collapse: collapse;
+				width: 80%;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Maratono dalyvių registracija</h3>
+
+		<form>
+			<div>
+				<label for="dalyvisName">Dalyvio vardas</label>
+				<input
+					id="dalyvisName"
+					type="text"
+					name="dalyvisName"
+					placeholder="pvz Jonas"
+				/>
+			</div>
+			<div>
+				<label for="dalyvisSecondName">Dalyvio pavardė</label>
+				<input
+					id="dalyvisSecondName"
+					type="text"
+					name="dalyvisSecondName"
+					placeholder="pvz Jonaitis"
+				/>
+			</div>
+			<div>
+				<label for="dalyvisAge">Dalyvio amžius</label>
+				<input
+					id="dalyvisAge"
+					type="number"
+					min="0"
+					max="100"
+					name="dalyvisAge"
+					placeholder="pvz 20"
+				/>
+			</div>
+			<div>
+				<label for="dalyvisWeight">Dalyvio svoris</label>
+				<input
+					id="dalyvisWeight"
+					type="number"
+					min="30"
+					max="200"
+					name="dalyvisWeight"
+					placeholder="pvz 60kg"
+				/>
+			</div>
+			<button>Išsiūsti</button>
+		</form>
+
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Vardas</th>
+					<th>Pavardė</th>
+					<th>Amžius</th>
+					<th>Svoris</th>
+					<th>Svorio kategorija</th>
+				</tr>
+			</thead>
+			<tbody id="table-body"></tbody>
+		</table>
+		<script
+			type="module"
+			src="index.js"
+		></script>
+	</body>
+</html>

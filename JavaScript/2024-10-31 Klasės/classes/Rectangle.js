@@ -1,26 +1,29 @@
 // Reikia sukurti klasę Rectangle (Stačiakampis).
-// Jis tures: Plotis, Aukstis,      Plotas, Perimetras
+// Klasės laukeliai: Plotis, Aukstis, Plotas, Perimetras
 
-//Ploto formulė:        S = Plotis * Aukstis;
-//Perimetro formulė:    P = Plotis * 2 + Aukstis * 2;
+// Keičiami laukeliai: Plotis, Aukštis
+// Keičiant plotį arba aukštį, turi keistis ir plotas bei perimetras
 
-//pabaigos laikas: 11:15
+// Ploto formulė:        S = Plotis * Aukstis;
+// Perimetro formulė:    P = Plotis * 2 + Aukstis * 2;
 
 export default class Rectangle {
 	#width;
 	#height;
 	#area;
-	#perimeter; //5
-	constructor(width, height) {
-		//2
-		this.#width = width;
-		this.#height = height; //3
+	#perimeter;
 
-		this.#area = width * height;
-		this.#perimeter = (width + height) * 2; //4
+	constructor(width, height) {
+		this.#width = width;
+		this.#height = height;
+
+		this.#countAreaAndPerimeter();
 	}
 
-	// GET/SET - Taikomi tik private laukeliams
+	#countAreaAndPerimeter() {
+		this.#area = this.#width * this.#height;
+		this.#perimeter = (this.#width + this.#height) * 2;
+	}
 
 	get width() {
 		return this.#width;
@@ -36,12 +39,10 @@ export default class Rectangle {
 	}
 	set width(newWidth) {
 		this.#width = newWidth;
-		this.#area = newWidth * this.#height;
-		this.#perimeter = (newWidth + this.#height) * 2;
+		this.#countAreaAndPerimeter();
 	}
 	set height(newHeight) {
 		this.#height = newHeight;
-		this.#area = newHeight * this.#width;
-		this.#perimeter = (newHeight + this.#width) * 2;
+		this.#countAreaAndPerimeter();
 	}
 }
