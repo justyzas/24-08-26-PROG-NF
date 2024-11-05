@@ -1,6 +1,8 @@
+import CategoryRepository from "./repositories/CategoryRepository.js";
 import ProductRepository from "./repositories/ProductRepository.js";
 
 console.log(ProductRepository.allProducts);
+console.log(CategoryRepository.allCategories);
 
 ProductRepository.addNewProduct({
 	categoryId: 6,

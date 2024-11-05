@@ -1,14 +1,17 @@
 // CRUD
 
+import CategoryRepository from "./CategoryRepository.js";
+
 // C - Create
 // R - Read
 // U - Update
 // D - Delete
 
+// CRUD repozitorija turi galimybes:
+
 // Perskaityti visus produktus
 // Perskaityti konkretų produktą
 // Pridėti naują produktą
-
 // Ištrinti produktą
 // Attnaujinti produktą
 
@@ -48,4 +51,14 @@ export default class ProductRepository {
 		return response;
 	}
 }
+// Gaunamos visos produktų reikšmės
 ProductRepository.allProducts = await ProductRepository.getAllProducts();
+// Sumappinamos visos produktų reikšmės su kategorijomis
+ProductRepository.allProducts = await ProductRepository.allProducts.map(
+	(product) => ({
+		...product,
+		category: CategoryRepository.allCategories.find(
+			(category) => category.id === product.categoryId
+		),
+	})
+);
