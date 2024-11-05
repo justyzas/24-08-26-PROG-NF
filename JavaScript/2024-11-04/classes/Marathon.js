@@ -1,10 +1,11 @@
+import { addRunnerToTable } from "../DOM/runnersTable.js";
 import Runner from "./Runner.js";
 
 export default class Marathon {
-	#IkategorijosBegikai;
-	#IIkategorijosBegikai;
-	#IIIkategorijosBegikai;
-	#idCounter;
+	#IkategorijosBegikai; //[]
+	#IIkategorijosBegikai; //[]
+	#IIIkategorijosBegikai; //[]
+	#idCounter; //generator function
 
 	constructor() {
 		this.#IkategorijosBegikai = [];
@@ -43,7 +44,6 @@ export default class Marathon {
 		// II - begikai kuriu svoris 60 < x <= 90
 		// III - begikai kuriu svoris > 90
 
-		// Panaudojama generator funkcija, kad sugeneruoti ID;
 		if (runner.weight <= 60) {
 			//I kategorija
 			this.#IkategorijosBegikai.push(runner);
@@ -53,7 +53,7 @@ export default class Marathon {
 			this.#IIkategorijosBegikai.push(runner);
 			return "II";
 		} else {
-			//III kategorija
+			//III kategorija >90
 			this.#IIIkategorijosBegikai.push(runner);
 			return "III";
 		}
@@ -68,8 +68,18 @@ export default class Marathon {
 			);
 			return;
 		}
+		if (runner.id !== null) {
+			console.error("Pridedamas bėgikas jau yra užregistruotas maratone");
+			return;
+		}
+		// Panaudojama generator funkcija, kad sugeneruoti ID;
+		const runnerId = this.#idCounter.next().value; //4
+
 		//Pridejimas prie vienos iš trijų kategorijų
-		runner.id = this.#idCounter.next().value;
-		runner.category = this.#priskirtiBegikuiKategoriją(runner);
+		const runnerCategory = this.#priskirtiBegikuiKategoriją(runner); //II
+
+		//Bėgikas užregistruojamas maratonui -> perduodami laukeliai id ir category
+		runner.registerToMarathon(runnerId, runnerCategory);
+		addRunnerToTable(runner);
 	}
 }
