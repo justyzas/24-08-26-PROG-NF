@@ -1,11 +1,14 @@
 import express from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
 import { readFromUsersFile, writeToUsersFile } from "./file-io.js";
 
 const server = express();
 // express.json() - middleware kuris pritaiko palaikomumą
 // priimti JSON duomenis
 server.use(express.json());
+// Priimti formos duomenis
+server.use(bodyParser.urlencoded({ extended: true }));
 
 server.use(cors());
 // server.use((req, res, next) => {
@@ -65,11 +68,18 @@ server.post("/users", (req, res) => {
 	// Iš POST request'o gaunami duomenys pasinaudojant req.body
 	const users = readFromUsersFile();
 	const newUser = req.body;
+	console.log(newUser);
+
+	if (!newUser.age || !newUser.name)
+		return res.status(400).json("not valid user schema");
+
 	newUser.id = idGen.next().value;
 	// users
 	users.push(newUser);
 	writeToUsersFile(users);
 	res.status(201).json(newUser);
+	// Redirect veikia tik tokiu atveju kai route yra pasiekiamas naudojantis formos elementu
+	// res.redirect("http://127.0.0.1:5500/index.html");
 });
 
 // PUT
