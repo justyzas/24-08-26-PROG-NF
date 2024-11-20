@@ -6,13 +6,13 @@ async function getAllUsers() {
 	return data;
 }
 async function getOneUser(id) {
-	const sql = `SELECT * FROM users WHERE id = ${id}`;
-	const [data] = await connection.query(sql);
+	const sql = `SELECT * FROM users WHERE id = ?`;
+	const [data] = await connection.query(sql, [id]);
 	return data[0];
 }
 async function insertIntoUsers(user) {
-	const sql = `INSERT INTO users (username, password) VALUES('${user.username}', '${user.password}')`;
-	const response = await connection.query(sql);
+	const sql = `INSERT INTO users (username, password) VALUES(?, ?)`;
+	const response = await connection.query(sql, [user.username, user.password]);
 	console.log(response);
 	// INSERT INTO table_name (column1, column2, column3, ...)
 	// VALUES (value1, value2, value3, ...);
