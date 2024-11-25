@@ -11,7 +11,6 @@ const Post = sequelize.define("post", {
 	},
 });
 
-// Post.belongsTo(User);
 User.hasMany(Post);
 
 export default Post;
