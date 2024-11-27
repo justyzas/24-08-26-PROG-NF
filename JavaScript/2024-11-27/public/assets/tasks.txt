@@ -1,0 +1,4 @@
+Reikia prideti varnele dėl pastabų.
+Apmokėjimo datos įvedimas (Iki datos) (neprivalomas).
+Apmokant sąskaitą nurodykite SF numerį (Pačiame dokumente).
+
