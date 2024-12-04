@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import User from "./models/user.model.js";
 import path from "path";
 import root from "./lib/dirname.js";
+
 await User.sync({ alter: true });
 dotenv.config();
 const app = express();
