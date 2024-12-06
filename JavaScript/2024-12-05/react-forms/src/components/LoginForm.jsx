@@ -3,9 +3,17 @@ import SubmitButton from "./SubmitButton";
 import UsernameInput from "./UsernameInput";
 
 export default function LoginForm({ switchPage }) {
+	function handleLogin(e) {
+		const formData = new FormData(e.target);
+		const registrationData = {}; //
+
+		formData.forEach((val, key) => {
+			registrationData[key] = val === "on" ? true : val;
+		});
+	}
 	return (
 		<div className="container mx-auto bg-slate-50 py-5 px-10">
-			<form>
+			<form onSubmit={handleLogin}>
 				<div className="flex items-baseline gap-x-4">
 					<h2 className="text-2xl">Login Form</h2>
 					<span

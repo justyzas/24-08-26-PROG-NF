@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export default function RepeatPassword({ password }) {
-	// ErrorMessage
 	const [errorMessage, setErrorMessage] = useState("");
 
 	function isRepeatPasswordValid(e) {
@@ -12,14 +11,16 @@ export default function RepeatPassword({ password }) {
 	}
 
 	return (
-		<div className="my-4 ">
+		<div className="my-4">
 			<input
 				type="password"
 				className={`${
 					errorMessage !== "" ? "border-red-500" : ""
 				} border-[1px] w-full rounded-md focus:shadow-md outline-none px-4 py-1`}
 				placeholder="please repeat your password"
+				name="repeatedPassword"
 				onBlur={isRepeatPasswordValid}
+				required
 			/>
 			<span className="text-red-500 text-sm">{errorMessage}</span>
 		</div>

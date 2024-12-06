@@ -1,9 +1,10 @@
 import { useState } from "react";
 import LoginForm from "./Components/LoginForm";
 import RegistrationForm from "./Components/RegistrationForm";
+import LoggedPage from "./components/LoggedPage";
 
 function App() {
-	const [currentlyActivePage, setCurrentlyActivePage] = useState("login");
+	const [currentlyActivePage, setCurrentlyActivePage] = useState("loggedPage");
 
 	// Registracija.
 	//username, password, password confirm, email,
@@ -14,7 +15,9 @@ function App() {
 	// + password.
 
 	const isPageNotFound = !(
-		currentlyActivePage === "login" || currentlyActivePage === "register"
+		currentlyActivePage === "login" ||
+		currentlyActivePage === "register" ||
+		currentlyActivePage === "loggedPage"
 	);
 
 	return (
@@ -26,6 +29,8 @@ function App() {
 			{currentlyActivePage === "register" && (
 				<RegistrationForm switchPage={setCurrentlyActivePage} />
 			)}
+			{currentlyActivePage === "loggedPage" && <LoggedPage />}
+
 			{isPageNotFound && <div>Puslapis nerastas</div>}
 		</>
 	);

@@ -11,7 +11,7 @@ export default function UsernameInput() {
 		const username = e.target.value;
 		if (!/^[a-zA-Z]/.test(username))
 			return setErrorMessage(
-				"Username does not start with Alphabet character!"
+				"Username does not start with an alphabet character!"
 			);
 		if (username.length < 5)
 			return setErrorMessage(
@@ -32,7 +32,9 @@ export default function UsernameInput() {
 					errorMessage !== "" ? "border-red-500" : ""
 				} border-[1px] w-full rounded-md focus:shadow-md outline-none px-4 py-1`}
 				placeholder="username"
+				name="username"
 				onBlur={isUsernameValid}
+				required
 			/>
 			<span className="text-red-500 text-sm">{errorMessage}</span>
 		</div>

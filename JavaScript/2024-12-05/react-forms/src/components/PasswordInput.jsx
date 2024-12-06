@@ -29,7 +29,6 @@ export default function PasswordInput({ onPasswordChange = (newValue) => {} }) {
 		setErrorMessage("");
 	}
 
-	document.querySelector();
 	return (
 		<div className="my-4 ">
 			<input
@@ -39,7 +38,9 @@ export default function PasswordInput({ onPasswordChange = (newValue) => {} }) {
 				} border-[1px] w-full rounded-md focus:shadow-md outline-none px-4 py-1`}
 				placeholder="please enter your password"
 				onBlur={isPasswordValid}
+				name="password"
 				onChange={(e) => onPasswordChange(e.target.value)}
+				required
 			/>
 			<span className="text-red-500 text-sm">{errorMessage}</span>
 		</div>

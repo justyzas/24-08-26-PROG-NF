@@ -34,7 +34,9 @@ export default function EmailInput() {
 					errorMessage !== "" ? "border-red-500" : ""
 				} border-[1px] w-full rounded-md focus:shadow-md outline-none px-4 py-1`}
 				placeholder="email"
+				name="email"
 				onBlur={isEmailInputValid}
+				required
 			/>
 			<span className="text-red-500 text-sm">{errorMessage}</span>
 		</div>
