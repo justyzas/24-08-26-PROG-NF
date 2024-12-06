@@ -46,7 +46,6 @@ export default function RegistrationForm({ switchPage }) {
 
 		// localStorage.setItem("key", "value");
 		// localStorage.key; string/null
-		//
 	}
 
 	function uniqueFieldsValidation(
