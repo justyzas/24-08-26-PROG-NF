@@ -19,7 +19,6 @@ export default function RegistrationForm({ switchPage }) {
 		formData.forEach((val, key) => {
 			registrationData[key] = val === "on" ? true : val;
 		});
-		console.log(registrationData);
 
 		// operatorius arba gaunant reikšmę
 		const registeredUsers = JSON.parse(localStorage.getItem("users")) || [];
@@ -40,12 +39,6 @@ export default function RegistrationForm({ switchPage }) {
 		localStorage.setItem("users", JSON.stringify(registeredUsers));
 
 		switchPage("login");
-		// gauti jau esamas registracijas. Jei nėra dar apibrėžtas key, jam nustatyti [];
-		// Į jau esamas registracijas pridėti nauja naudotoją.
-		// Išsaugoti localStorage.
-
-		// localStorage.setItem("key", "value");
-		// localStorage.key; string/null
 	}
 
 	function uniqueFieldsValidation(
