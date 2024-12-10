@@ -4,10 +4,7 @@ export default function App() {
 	const [isStopped, setIsStopped] = useState(false);
 	const [secondsCount, setSecondsCount] = useState(0);
 
-	// 1.
-	// 2.
 	useEffect(() => {
-		//
 		console.log("useEffect suveike");
 
 		if (!isStopped) {

@@ -20,7 +20,7 @@ export default function App() {
 	}, []);
 
 	useEffect(() => {
-		// UseEffect, kuris dependency masyve turi kažkokį parametrą - persikrauna kai tas parametras pasikeičia
+		// UseEffect, kuris dependency masyve turi kažkokį parametrą - pasileidžia kai tas parametras pasikeičia
 		console.log("Count was updated");
 	}, [count]);
 
@@ -30,7 +30,13 @@ export default function App() {
 		}
 
 		window.addEventListener("resize", handleWidthChange);
+
+		return () => {
+			window.removeEventListener("resize", handleWidthChange);
+		};
 	}, []);
+
+	// useEffect - call api, event listeners, setTimeout arba setInterval
 	return (
 		<>
 			{/* {windowWidth}px */}
