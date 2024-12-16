@@ -21,7 +21,7 @@ export async function getScooterHistoryById(req, res) {
 export async function createScooterHistoryRecord(req, res) {
 	const newScooterHistoryData = {
 		startingRideKm: updatedScooter.totalRide,
-		city: req.body,
+		city: req.body.city,
 	};
 	const validationResult = ScooterLeaseHistoryCreateValidation.safeParse(
 		newScooterHistoryData
