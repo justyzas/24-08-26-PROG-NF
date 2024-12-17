@@ -12,6 +12,12 @@ app.use("/api", mainRouter);
 app.listen(3000, () => {
 	console.log("Development server has started, go to http://localhost/server/");
 });
+// http://localhost/server/api
+
+// MVC
+// Modelis - Paspirtukai, useriai, paspirtukų nuomos istorijos
+// View 	- REACT
+// Controllers - Kontroliuoja kas atsitinka
 
 // 1. User modelio sukūrimas
 // 2. Slaptažodžio hašavimo algoritmas

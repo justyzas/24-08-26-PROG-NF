@@ -1,6 +1,5 @@
 import z from "zod";
 
-// rideTariffPerKm, rideTariffPerMin, registrationCode
 export const ScooterCreateSchema = z.object({
 	rideTariffPerKm: z
 		.number({ message: "rideTariffPerKm was not a number" })
