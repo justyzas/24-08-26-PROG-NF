@@ -9,6 +9,8 @@ import {
 import { registrationSchema } from "../utils/validations/AuthSchema";
 import { useState } from "react";
 export default function RegisterPage() {
+	// TODO: Jei useris prisijungęs, redirectinti į dashboard
+
 	// Error statai, skirti kiekvienam TextFieldui
 	const [errors, setErrors] = useState({
 		username: "",
