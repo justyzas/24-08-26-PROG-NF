@@ -17,6 +17,7 @@ function App() {
 	useEffect(() => {
 		async function checkSession() {
 			// /server/api/auth/check-session
+			// TODO įgyvendinti check-session route bei iškviesti API čia, kad nusistatytų bendras konteksto state
 		}
 		checkSession();
 	}, []);
