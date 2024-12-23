@@ -2,40 +2,36 @@ import {
 	BrowserRouter,
 	Routes,
 	Route,
+	Navigate,
 	// createBrowserRouter,
 } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import SessionContext from "./context/SessionContext";
-import { useEffect, useState } from "react";
+import { useSessionState } from "./custom-hooks/useSessionState";
 function App() {
-	const [sessionState, setSessionState] = useState({
-		user: { email: "", username: "" },
-		isLogged: false,
-	});
-	useEffect(() => {
-		async function checkSession() {
-			// /server/api/auth/check-session
-			// TODO įgyvendinti check-session route bei iškviesti API čia, kad nusistatytų bendras konteksto state
-		}
-		checkSession();
-	}, []);
+	// Custom hook - tai musu pačių sukurtas hook, centralizuojantis logiką kitame faile.
+	const { sessionState, setSessionState } = useSessionState();
 	return (
-		<SessionContext.Provider value={sessionState}>
+		<SessionContext.Provider value={{ sessionState, setSessionState }}>
 			<BrowserRouter>
 				<Routes>
 					<Route
 						path="/"
-						element={<Dashboard />}
+						element={
+							sessionState.isLogged ? <Dashboard /> : <Navigate to="/login" />
+						}
 					/>
 					<Route
 						path="/login"
-						element={<Login />}
+						element={!sessionState.isLogged ? <Login /> : <Navigate to="/" />}
 					/>
 					<Route
 						path="/register"
-						element={<Register />}
+						element={
+							!sessionState.isLogged ? <Register /> : <Navigate to="/" />
+						}
 					/>
 				</Routes>
 			</BrowserRouter>

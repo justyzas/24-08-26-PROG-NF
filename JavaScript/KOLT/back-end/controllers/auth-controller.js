@@ -117,3 +117,15 @@ export async function logout(req, res) {
 	req.session.destroy();
 	res.status(200).json({ message: "You logged out successfully" });
 }
+export async function checkSession(req, res) {
+	// Jei nėra prisijungęs naudotojas
+	if (!req.session.isLogged)
+		return res.status(403).json({
+			message: "Not logged in",
+		});
+	// Prisijungusio naudotojo atveju:
+	res.status(200).json({
+		user: req.session.user,
+		isLogged: req.session.isLogged,
+	});
+}

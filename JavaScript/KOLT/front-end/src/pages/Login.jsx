@@ -6,41 +6,16 @@ import {
 	Typography,
 } from "@mui/material";
 import "../css/login.css";
+import useLogin from "../custom-hooks/useLogin";
 
 export default function LoginPage() {
-	// TODO: Jei useris prisijungęs, redirectinti į dashboard
-	async function onSubmit(e) {
-		e.preventDefault();
-		const formData = new FormData(e.target);
-
-		// susiformuojame obj, kad kreiptis į API
-		const loginData = {
-			usernameOrEmail: formData.get("usernameOrEmail"),
-			password: formData.get("password"),
-		};
-
-		//validacijos jei ju prireiks
-
-		const promise = await fetch("/server/api/auth/login", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(loginData),
-		});
-
-		if (promise.ok) window.location.href = "/";
-		else {
-			const response = await promise.json();
-			alert(response.message);
-		}
-	}
+	const login = useLogin();
 
 	return (
 		<Paper id="login">
 			<Typography variant="h5">Prisijungimas</Typography>
 			<hr />
-			<form onSubmit={onSubmit}>
+			<form onSubmit={login}>
 				<Grid
 					container
 					spacing={2}

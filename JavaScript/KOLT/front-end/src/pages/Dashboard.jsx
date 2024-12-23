@@ -1,14 +1,7 @@
+import useLogout from "../custom-hooks/useLogout";
+
 export default function DashboardPage() {
-	// /server/api/auth/log-out
-	async function logout() {
-		const promise = await fetch("/server/api/auth/log-out");
-		if (promise.ok) window.location.href = "/login";
-		else {
-			const response = await promise.json();
-			alert(response.message);
-		}
-	}
-	// TODO: Jei useris neprisijungęs, redirectinti į login
+	const logout = useLogout();
 	return (
 		<div>
 			<h2>Dashboard</h2>
