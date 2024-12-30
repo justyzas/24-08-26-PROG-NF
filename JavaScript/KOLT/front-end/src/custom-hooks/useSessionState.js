@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+// Skirtas sukurti sesijos state bei kreiptis į API sesijos patikrinimui (kai pasileidžia)
 export function useSessionState() {
 	const [sessionState, setSessionState] = useState({
 		user: { email: "", username: "" },
