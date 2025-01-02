@@ -5,14 +5,21 @@ export default function useScooterData() {
 	const [allScooters, setAllScooters] = useState([]);
 	const [selectedScooterHistory, setSelectedScooterHistory] = useState([]);
 	const [selectedScooterId, setSelectedScooterId] = useState(null); //null/id
+	const [isCreateModalOpen, setCreateModalOpen] = useState(false);
 
 	useEffect(() => {
 		async function fetchScooterData() {
 			// FETCH API FOR SCOOTERS
+
 			setAllScooters(scooters);
 		}
 		fetchScooterData();
 	}, []);
+
+	function addNewScooter(newScooter) {
+		newScooter.history = [];
+		setAllScooters((c) => [...c, newScooter]);
+	}
 
 	function selectScooter(id) {
 		const foundScooter = allScooters.find((scooter) => scooter.id == id);
@@ -26,11 +33,25 @@ export default function useScooterData() {
 		setSelectedScooterId(null);
 	}
 
+	function onCreateModalClose() {
+		setCreateModalOpen(false);
+	}
+
+	function onOpen() {
+		setCreateModalOpen(true);
+	}
+
 	return {
+		addNewScooter,
 		allScooters,
 		selectedScooterHistory,
 		selectScooter,
 		clearSelectedScooter,
 		selectedScooterId,
+		createModal: {
+			isOpen: isCreateModalOpen,
+			onClose: onCreateModalClose,
+			onOpen,
+		},
 	};
 }

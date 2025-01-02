@@ -22,8 +22,18 @@ export async function createScooter(req, res) {
 	if (!validationResult.success)
 		return res.status(400).json({ error: validationResult.error.issues });
 
-	const newScooter = await ScooterModel.create(req.body);
-	res.status(201).json(newScooter);
+	try {
+		const newScooter = await ScooterModel.create(req.body);
+
+		res.status(201).json(newScooter);
+	} catch (err) {
+		// Error, SequelizeError
+		if (err?.name === "SequelizeUniqueConstraintError")
+			res.status(409).json({ message: err.errors[0].message });
+		else {
+			res.status(500).json({ message: "Internal server error occured" });
+		}
+	}
 }
 export async function deleteScooterById(req, res) {
 	const { id } = req.params;

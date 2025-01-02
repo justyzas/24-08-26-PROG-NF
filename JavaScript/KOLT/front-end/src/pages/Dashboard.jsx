@@ -6,6 +6,7 @@ import { Button, Typography } from "@mui/material";
 import ScootersHistoryTable from "../components/ScootersHistoryTable";
 import ScootersContext from "../context/ScootersContext";
 import useScooterData from "../custom-hooks/useScooterData";
+import ScooterActions from "../components/ScooterActions";
 
 export default function DashboardPage() {
 	const logout = useLogout();
@@ -15,6 +16,8 @@ export default function DashboardPage() {
 		selectScooter,
 		clearSelectedScooter,
 		selectedScooterId,
+		createModal,
+		addNewScooter,
 	} = useScooterData();
 
 	return (
@@ -25,6 +28,8 @@ export default function DashboardPage() {
 				selectedScooterHistory,
 				selectScooter,
 				clearSelectedScooter,
+				createModal,
+				addNewScooter,
 			}}
 		>
 			<main
@@ -65,7 +70,13 @@ export default function DashboardPage() {
 						<ScootersHistoryTable />
 					</Paper>
 					<Paper className="item item-3">
-						<Typography variant="h5">Actions</Typography>
+						<Typography
+							variant="h5"
+							sx={{ mb: 3 }}
+						>
+							Actions
+						</Typography>
+						<ScooterActions />
 					</Paper>
 					{/* <div className="item item-4">item-4</div> */}
 				</div>
