@@ -2,7 +2,7 @@ import express from "express";
 import * as scootersController from "../controllers/scooters-controller.js";
 
 const router = express.Router();
-
+// /server/api/scooters
 router.get("/", scootersController.getAllScooters);
 router.get("/:id", scootersController.getScooterById);
 router.post("/", scootersController.createScooter);
