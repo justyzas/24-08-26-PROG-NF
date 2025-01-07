@@ -1,16 +1,56 @@
 import ScooterModel from "../models/ScooterModel.js";
 import ScooterHistoryModel from "../models/ScooterLeaseHistoryModel.js";
-import { ScooterCreateSchema } from "../utils/validations/ScooterSchema.js";
+import {
+	ScooterCreateSchema,
+	ScooterUpdateSchema,
+} from "../utils/validations/ScooterSchema.js";
+
+export async function getScootersCount(req, res) {
+	//busyScootersCount, availableScootersCount, scootersCount
+
+	// const countOfScooters = ScooterModel.count();
+	// const countOfBusyScooters = ScooterModel.count({ where: { busy: true } });
+	// const countOfAvailableScooters = ScooterModel.count({
+	// 	where: { busy: false },
+	// });
+	// const responses = await Promise.all([
+	// 	countOfScooters,
+	// 	countOfBusyScooters,
+	// 	countOfAvailableScooters,
+	// ]);
+
+	// res.status(200).json({
+	// 	allScootersCount: responses[0],
+	// 	busyScootersCount: responses[1],
+	// 	availableScootersCount: responses[2],
+	// });
+	const allScooters = await ScooterModel.findAll({ attributes: ["isBusy"] });
+	const allScootersJson = allScooters.map((v) => v.toJSON());
+
+	const totalBusyScooters = allScootersJson.filter(
+		(scooter) => scooter.isBusy
+	).length;
+	const totalAvailableScooters = allScootersJson.length - totalBusyScooters;
+	res.status(200).json({
+		allScootersCount: allScooters.length,
+		busyScootersCount: totalBusyScooters,
+		availableScootersCount: totalAvailableScooters,
+	});
+}
 
 export async function getAllScooters(req, res) {
 	// req.params - parametrai pateikiami adrese kaip tarpiniai routai.    pvz: /api/scooters/:id /api/scooters/8
 
-	// Query params - req.query  pvz: /api/scooters?history=false
+	// Query params - req.query  pvz: /api/scooters?history=false&page=0&rowsPerPage=5
 	console.log(req.query);
 	const dbQueryParams = {};
+	const pageNumber = +req.query?.page || 0;
+	const rowsPerPage = +req.query?.rowsPerPage || 5;
 	if (req.query.history === "true")
 		dbQueryParams.include = { model: ScooterHistoryModel, as: "history" };
 
+	dbQueryParams.offset = rowsPerPage * pageNumber; //1*5 = 5
+	dbQueryParams.limit = rowsPerPage; //5-10
 	const allScooters = await ScooterModel.findAll(dbQueryParams);
 	res.status(200).json(allScooters);
 }
@@ -65,7 +105,7 @@ export async function updateScooterById(req, res) {
 		return res
 			.status(400)
 			.json({ message: "Scooter ID was not provided or was in wrong format" });
-	const validationResult = ScooterCreateSchema.safeParse(req.body);
+	const validationResult = ScooterUpdateSchema.safeParse(req.body);
 	if (!validationResult.success)
 		return res.status(400).json({ error: validationResult.error.issues });
 	const updatedScooter = await ScooterModel.update(req.body, { where: { id } });

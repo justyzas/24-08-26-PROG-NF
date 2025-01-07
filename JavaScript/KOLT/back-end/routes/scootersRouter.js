@@ -6,6 +6,7 @@ const router = express.Router();
 // /server/api/scooters
 router.get("/", scootersController.getAllScooters);
 router.get("/rand", scootersController.addRandom);
+router.get("/count", scootersController.getScootersCount);
 router.get("/:id", scootersController.getScooterById);
 router.post("/", scootersController.createScooter);
 router.delete("/:id", scootersController.deleteScooterById);
