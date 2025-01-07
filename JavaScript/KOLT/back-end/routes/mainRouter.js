@@ -4,6 +4,7 @@ import scootersHistoryRouter from "./scootersLeaseHistoryRouter.js";
 import authRouter from "./authRouter.js";
 const router = express.Router();
 
+// /api
 router.use("/scooters", scootersRouter);
 router.use("/scooters-lease-history", scootersHistoryRouter);
 router.use("/auth", authRouter);

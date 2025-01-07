@@ -3,6 +3,12 @@ body {
 }
 
 #dashboard {
+	#dashboard-card {
+		/* background-color: aqua; */
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 	.main-grid {
 		/* Box-sizing nustato, ar paddingas yra įskaičiuojamas į elemento aukštį */
 		box-sizing: border-box;

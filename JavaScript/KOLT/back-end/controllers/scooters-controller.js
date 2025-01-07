@@ -1,10 +1,20 @@
 import ScooterModel from "../models/ScooterModel.js";
+import ScooterHistoryModel from "../models/ScooterLeaseHistoryModel.js";
 import { ScooterCreateSchema } from "../utils/validations/ScooterSchema.js";
 
 export async function getAllScooters(req, res) {
-	const allScooters = await ScooterModel.findAll();
+	// req.params - parametrai pateikiami adrese kaip tarpiniai routai.    pvz: /api/scooters/:id /api/scooters/8
+
+	// Query params - req.query  pvz: /api/scooters?history=false
+	console.log(req.query);
+	const dbQueryParams = {};
+	if (req.query.history === "true")
+		dbQueryParams.include = { model: ScooterHistoryModel, as: "history" };
+
+	const allScooters = await ScooterModel.findAll(dbQueryParams);
 	res.status(200).json(allScooters);
 }
+
 export async function getScooterById(req, res) {
 	// /api/data/7
 	const { id } = req.params;
@@ -64,4 +74,19 @@ export async function updateScooterById(req, res) {
 			.status(404)
 			.json({ message: "Scooter with provided ID was not found" });
 	res.status(201).json(updatedScooter);
+}
+
+export async function addRandom(req, res) {
+	function rand(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	const newScooterData = {
+		registrationCode: rand(10000000, 99999999),
+		leaseTariffPerMin: rand(1, 100) / 100,
+		rideTariffPerKm: rand(1, 100) / 100,
+	};
+	const newScooter = await ScooterModel.create(newScooterData);
+
+	res.status(201).json(newScooter);
 }
