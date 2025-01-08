@@ -12,7 +12,7 @@ export default function ScooterActions() {
 		isOpen: false,
 	});
 	const {
-		selectedScooterId,
+		selectedScooter,
 		createModal,
 		deleteScooter: deleteFromArray,
 		updateModal,
@@ -39,9 +39,35 @@ export default function ScooterActions() {
 			console.error(response.message);
 		}
 	}
+	async function leaseScooter() {
+		const city = prompt("Įveskite miestą kuriame nuomojatės paspirtuką");
 
+		const promise = await fetch(
+			`/server/api/scooters-lease-history/${selectedScooter.id}`,
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ city }),
+			}
+		);
+
+		if (promise.ok) {
+			const response = await promise.json();
+			console.log(response);
+		}
+	}
 	return (
 		<div>
+			<Button
+				variant="outlined"
+				color={selectedScooter?.isBusy ? "warning" : "primary"} //primary/warning
+				disabled={selectedScooter === null}
+				onClick={leaseScooter}
+			>
+				{selectedScooter?.isBusy ? "Baigti Nuomą" : "Išnuomoti"}
+			</Button>
 			<Button
 				variant="outlined"
 				color="success"
@@ -53,7 +79,7 @@ export default function ScooterActions() {
 			<Button
 				variant="outlined"
 				color="primary"
-				disabled={selectedScooterId === null}
+				disabled={selectedScooter === null}
 				onClick={updateModal.onOpen}
 			>
 				Atnaujinti
@@ -62,9 +88,9 @@ export default function ScooterActions() {
 			<Button
 				variant="outlined"
 				color="error"
-				disabled={selectedScooterId === null}
+				disabled={selectedScooter === null}
 				onClick={() => {
-					deleteScooter(selectedScooterId);
+					deleteScooter(selectedScooter.id);
 				}}
 			>
 				Ištrinti

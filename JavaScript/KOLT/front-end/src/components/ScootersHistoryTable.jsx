@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import ScootersContext from "../context/ScootersContext";
 import { useContext } from "react";
+import { showDate } from "../utils/date";
 
 export default function ScootersHistoryTable() {
 	const { selectedScooterHistory } = useContext(ScootersContext);
@@ -51,15 +52,13 @@ function Row({ data }) {
 	console.log(data);
 	return (
 		<TableRow>
-			<TableCell align="center">
-				{data.startingLeaseDate.toLocaleDateString("lt-LT")}
-			</TableCell>
+			<TableCell align="center">{showDate(data.startingLeaseDate)}</TableCell>
 			<TableCell align="center">{data.startingRideKm}</TableCell>
 			<TableCell align="center">{data.startingRideKm}</TableCell>
+			<TableCell align="center">{showDate(data.endingLeaseDate)}</TableCell>
 			<TableCell align="center">
-				{data.endingLeaseDate.toLocaleDateString("lt-LT")}
+				{!data.leasingPrice ? "-" : data.leasingPrice}
 			</TableCell>
-			<TableCell align="center">{data.leasingPrice}</TableCell>
 		</TableRow>
 	);
 }

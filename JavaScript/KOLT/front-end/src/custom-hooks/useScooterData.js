@@ -54,6 +54,7 @@ export default function useScooterData() {
 
 	function clearSelectedScooter() {
 		setSelectedScooterHistory([]);
+		setSelectedScooter(null);
 		setSelectedScooterId(null);
 	}
 

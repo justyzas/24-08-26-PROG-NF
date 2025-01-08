@@ -15,6 +15,7 @@ import { useContext } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import ScootersContext from "../context/ScootersContext";
+import { showDate } from "../utils/date";
 
 export default function ScootersTable() {
 	const { scooters } = useContext(ScootersContext);
@@ -52,11 +53,7 @@ function Row({ data }) {
 		if (open) clearSelectedScooter();
 		else selectScooter(data.id);
 	}
-
-	function showDate(date) {
-		if (!date) return "Scooter was never used";
-		else return date.toLocaleDateString("lt-LT");
-	}
+	const lastUseTime = showDate(data.lastUseTime);
 	return (
 		<>
 			<TableRow>
@@ -71,7 +68,9 @@ function Row({ data }) {
 				</TableCell>
 				<TableCell align="center">{data.id}</TableCell>
 				<TableCell align="center">{data.registrationCode}</TableCell>
-				<TableCell align="center">{showDate(data.lastUseTime)}</TableCell>
+				<TableCell align="center">
+					{lastUseTime === "-" ? "Scooter was never used" : lastUseTime}
+				</TableCell>
 				<TableCell align="center">
 					{data.isBusy ? (
 						<Chip

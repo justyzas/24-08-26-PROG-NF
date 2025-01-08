@@ -7,9 +7,9 @@ import ScootersContext from "../context/ScootersContext";
 import useScooterData from "../custom-hooks/useScooterData";
 import ScooterActions from "../components/ScooterActions";
 
-import useCountScooterStats from "../custom-hooks/useCountScooterStats";
+// import useCountScooterStats from "../custom-hooks/useCountScooterStats";
 import DashboardCard from "../components/DashboardCard";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function DashboardPage() {
 	const {
@@ -28,8 +28,8 @@ export default function DashboardPage() {
 		scootersCount,
 	} = useScooterData();
 
-	const { totalScooters, totalBusyScooters, totalAvailableScooters } =
-		useCountScooterStats(allScooters);
+	// const { totalScooters, totalBusyScooters, totalAvailableScooters } =
+	// 	useCountScooterStats(allScooters);
 
 	return (
 		<ScootersContext.Provider
@@ -81,7 +81,7 @@ export default function DashboardPage() {
 							onRowsPerPageChange={(e) => {
 								pagination.setRowsPerPage(e.target.value);
 							}}
-							rowsPerPageOptions={[5, 10, 15, 20]}
+							rowsPerPageOptions={[5, 10, 15, 20, 50]}
 						/>
 					</Paper>
 					<Paper className="item item-2">
