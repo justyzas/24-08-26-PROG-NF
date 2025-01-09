@@ -81,6 +81,23 @@ export default function useScooterData() {
 		setAllScooters(originalScootersArray);
 		setUpdateModalOpen(false);
 	}
+
+	function updateScooterHistory(newScooterHistory) {
+		// atrandame indeksą masyve, kurią istoriją keisti
+		const foundScooterHistoryIndex = selectedScooterHistory.findIndex(
+			(h) => h.id === newScooterHistory.id
+		);
+		const foundScooterIndex = allScooters.findIndex(
+			(scooter) => scooter.id === newScooterHistory.scooterId
+		);
+		if (foundScooterHistoryIndex === -1 || foundScooterIndex === -1) return;
+		const newScooterHistories = [...selectedScooterHistory];
+		const newScooters = [...allScooters];
+
+		newScooterHistories[foundScooterHistoryIndex] = newScooterHistory;
+		newScooters[foundScooterIndex].history = newScooterHistories;
+		setSelectedScooterHistory(newScooterHistories);
+	}
 	return {
 		addNewScooter,
 		deleteScooter,
@@ -91,6 +108,7 @@ export default function useScooterData() {
 		clearSelectedScooter,
 		selectedScooterId,
 		selectedScooter,
+		updateScooterHistory,
 		createModal: {
 			isOpen: isCreateModalOpen,
 			onClose: () => setCreateModalOpen(false),

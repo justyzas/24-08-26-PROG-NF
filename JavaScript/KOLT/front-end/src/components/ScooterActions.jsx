@@ -16,6 +16,8 @@ export default function ScooterActions() {
 		createModal,
 		deleteScooter: deleteFromArray,
 		updateModal,
+		updateScooterHistory,
+		updateScooter,
 	} = useContext(ScootersContext);
 
 	async function deleteScooter(id) {
@@ -43,7 +45,7 @@ export default function ScooterActions() {
 		const city = prompt("Įveskite miestą kuriame nuomojatės paspirtuką");
 
 		const promise = await fetch(
-			`/server/api/scooters-lease-history/${selectedScooter.id}`,
+			`/server/api/scooters-lease-history/start-lease/${selectedScooter.id}`,
 			{
 				method: "POST",
 				headers: {
@@ -58,13 +60,38 @@ export default function ScooterActions() {
 			console.log(response);
 		}
 	}
+	async function endLease() {
+		const rideKm = +prompt("Kiek km buvo nuvažiuota?");
+		if (rideKm === 0) return;
+		else if (isNaN(rideKm)) {
+			alert("Nuvažiuotas kilometrų skaičius buvo neteisingai įvestas");
+			endLease(); //rekursija
+		}
+
+		const promise = await fetch(
+			`/server/api/scooters-lease-history/end-lease/${selectedScooter.id}`,
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ rideKm }),
+			}
+		);
+		if (promise.ok) {
+			const response = await promise.json();
+			console.log(response);
+			updateScooterHistory(response.history);
+			updateScooter(response.scooter.id, response.scooter);
+		}
+	}
 	return (
 		<div>
 			<Button
 				variant="outlined"
 				color={selectedScooter?.isBusy ? "warning" : "primary"} //primary/warning
 				disabled={selectedScooter === null}
-				onClick={leaseScooter}
+				onClick={selectedScooter?.isBusy ? endLease : leaseScooter}
 			>
 				{selectedScooter?.isBusy ? "Baigti Nuomą" : "Išnuomoti"}
 			</Button>

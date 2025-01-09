@@ -26,6 +26,7 @@ export default function DashboardPage() {
 		updateScooter,
 		pagination,
 		scootersCount,
+		updateScooterHistory,
 	} = useScooterData();
 
 	// const { totalScooters, totalBusyScooters, totalAvailableScooters } =
@@ -45,6 +46,7 @@ export default function DashboardPage() {
 				addNewScooter,
 				deleteScooter,
 				updateScooter,
+				updateScooterHistory,
 			}}
 		>
 			<main

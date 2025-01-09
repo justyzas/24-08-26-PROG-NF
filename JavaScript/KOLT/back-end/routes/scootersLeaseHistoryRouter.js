@@ -5,6 +5,10 @@ const router = express.Router();
 // /server/api/scooters-lease-history
 router.get("/", scooterHistoryController.getAllScootersHistory);
 router.get("/:id", scooterHistoryController.getScooterHistoryById);
-router.post("/:scooterId", scooterHistoryController.createScooterHistoryRecord);
+router.post(
+	"/start-lease/:scooterId",
+	scooterHistoryController.createScooterHistoryRecord
+); //pradeda nuomą
+router.post("/end-lease/:scooterId", scooterHistoryController.endScooterLease); //pabaigia nuomą
 
 export default router;

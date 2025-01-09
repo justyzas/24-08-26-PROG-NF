@@ -54,7 +54,7 @@ function Row({ data }) {
 		<TableRow>
 			<TableCell align="center">{showDate(data.startingLeaseDate)}</TableCell>
 			<TableCell align="center">{data.startingRideKm}</TableCell>
-			<TableCell align="center">{data.startingRideKm}</TableCell>
+			<TableCell align="center">{data.endingRideKm}</TableCell>
 			<TableCell align="center">{showDate(data.endingLeaseDate)}</TableCell>
 			<TableCell align="center">
 				{!data.leasingPrice ? "-" : data.leasingPrice}
