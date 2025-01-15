@@ -137,11 +137,23 @@ function getDataFromDb(): ProductSaleData[] {
 				unitsSold: 30,
 				pricePerUnit: 60,
 			},
+			{
+				productName: "BackpackBackpackBackpackBackpack",
+				category: "AccessoriesAccessories",
+				unitsSold: 30,
+				pricePerUnit: 65641610.455,
+			},
 		])
 	);
 	return salesData as ProductSaleData[];
 }
 
-const salesData = getDataFromDb();
+const salesDataPartial = getDataFromDb();
 
+const salesData = salesDataPartial.map((productSale) => ({
+	...productSale,
+	sum: productSale.unitsSold * productSale.pricePerUnit,
+}));
+
+console.log(salesData);
 generateReport(salesData);

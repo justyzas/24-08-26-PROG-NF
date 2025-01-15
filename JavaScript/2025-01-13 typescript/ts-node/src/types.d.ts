@@ -37,4 +37,5 @@ type ProductSaleData = {
 	category: string;
 	unitsSold: number;
 	pricePerUnit: number;
+	sum?: number;
 };
