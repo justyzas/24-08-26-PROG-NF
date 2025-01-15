@@ -19,3 +19,15 @@ export function gautiSaliesPavadinima(salis: Salis) {
 			return "Nežinoma šalis";
 	}
 }
+export async function poSekundesParasytiZinute() {
+	await new Promise((res, rej) => {
+		setTimeout(() => {
+			console.log("Zinute");
+			res("");
+		}, 1000);
+		// res("Duomenys1"); //ATLIKTA UŽDUOTIS SĖKMINGAI - ATIDUODU DUOMENIS
+		// rej(new Error("Operacijos atlikti nepavyko"));
+	});
+
+	console.log("Funkcija baigta");
+}
