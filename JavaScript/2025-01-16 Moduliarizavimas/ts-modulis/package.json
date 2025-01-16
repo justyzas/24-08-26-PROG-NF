@@ -1,0 +1,19 @@
+{
+	"name": "ts-modulis",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./dist/index.js",
+	"type": "module",
+	"types": "./types.d.ts",
+	"scripts": {
+		"start": "node ./dist/index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"exports": {
+		".": {
+			"import": "./index.js"
+		}
+	}
+}
