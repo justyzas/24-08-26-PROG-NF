@@ -5,7 +5,7 @@ export default function App() {
 		<>
 			<Button
 				color="green"
-				size={3}
+				size={1}
 			>
 				Mygtukas
 			</Button>
