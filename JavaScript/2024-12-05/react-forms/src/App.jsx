@@ -4,7 +4,7 @@ import RegistrationForm from "./Components/RegistrationForm";
 import LoggedPage from "./components/LoggedPage";
 
 function App() {
-	const [currentlyActivePage, setCurrentlyActivePage] = useState("loggedPage");
+	const [currentlyActivePage, setCurrentlyActivePage] = useState("login");
 
 	// Registracija.
 	//username, password, password confirm, email,
