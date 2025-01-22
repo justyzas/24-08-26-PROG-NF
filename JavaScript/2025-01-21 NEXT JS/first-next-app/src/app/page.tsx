@@ -2,8 +2,8 @@ export default function Komponentas() {
 	// /
 
 	return (
-		<div>
+		<main>
 			<h1>Pagrindinis puslapis</h1>
-		</div>
+		</main>
 	);
 }
