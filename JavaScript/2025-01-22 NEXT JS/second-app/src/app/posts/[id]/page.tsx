@@ -10,7 +10,7 @@ export default async function Page({params}: {params: Promise<{ id: string }>}){
     const post = posts.find((post)=>post.id.toString() == id);
     // Jei post'as nerastas, norime redirectinti į bendrą post'ų puslapį;
     if(!post){
-        redirect("/posts")
+        redirect("/posts");
     }
 
     

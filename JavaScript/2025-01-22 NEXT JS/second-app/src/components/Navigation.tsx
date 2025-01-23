@@ -5,7 +5,7 @@ export default function Navigation()
     const pages = [
         {
             href: "/",
-            title: "Main"
+            title: "Main",
         }, 
         {
             href: "/posts",
